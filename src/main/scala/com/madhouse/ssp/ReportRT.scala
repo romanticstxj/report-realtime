@@ -17,7 +17,7 @@ object ReportRT {
      val (hadoopEnv, configFile) = args.length match {
        case 1 => ("production", args(0))
        case 2 => (args(0), args(1))
-       case _ => throw new IllegalArgumentException("the parameter length must equal 2")
+       case _ => throw new IllegalArgumentException("the parameter length must equal 1 or 2")
      }
 
     require(Seq("develop", "beta", "production").contains(hadoopEnv), s"invalid hadoop environment $hadoopEnv")
