@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class WinNotice extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1292117171777792986L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"WinNotice\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"price\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = -930754379443415256L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"WinNotice\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"price\",\"type\":\"int\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -58,6 +58,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
   @Deprecated public long mediaid;
   @Deprecated public long adspaceid;
   @Deprecated public int price;
+  @Deprecated public java.lang.String location;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -75,8 +76,9 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
    * @param mediaid The new value for mediaid
    * @param adspaceid The new value for adspaceid
    * @param price The new value for price
+   * @param location The new value for location
    */
-  public WinNotice(java.lang.Long time, java.lang.Integer status, java.lang.Long dspid, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Integer price) {
+  public WinNotice(java.lang.Long time, java.lang.Integer status, java.lang.Long dspid, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Integer price, java.lang.String location) {
     this.time = time;
     this.status = status;
     this.dspid = dspid;
@@ -84,6 +86,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
     this.mediaid = mediaid;
     this.adspaceid = adspaceid;
     this.price = price;
+    this.location = location;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -97,6 +100,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
     case 4: return mediaid;
     case 5: return adspaceid;
     case 6: return price;
+    case 7: return location;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -112,6 +116,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
     case 4: mediaid = (java.lang.Long)value$; break;
     case 5: adspaceid = (java.lang.Long)value$; break;
     case 6: price = (java.lang.Integer)value$; break;
+    case 7: location = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -229,6 +234,22 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
+   * Gets the value of the 'location' field.
+   * @return The value of the 'location' field.
+   */
+  public java.lang.String getLocation() {
+    return location;
+  }
+
+  /**
+   * Sets the value of the 'location' field.
+   * @param value the value to set.
+   */
+  public void setLocation(java.lang.String value) {
+    this.location = value;
+  }
+
+  /**
    * Creates a new WinNotice RecordBuilder.
    * @return A new WinNotice RecordBuilder
    */
@@ -267,6 +288,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
     private long mediaid;
     private long adspaceid;
     private int price;
+    private java.lang.String location;
 
     /** Creates a new Builder */
     private Builder() {
@@ -307,6 +329,10 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
         this.price = data().deepCopy(fields()[6].schema(), other.price);
         fieldSetFlags()[6] = true;
       }
+      if (isValidValue(fields()[7], other.location)) {
+        this.location = data().deepCopy(fields()[7].schema(), other.location);
+        fieldSetFlags()[7] = true;
+      }
     }
 
     /**
@@ -342,6 +368,10 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[6], other.price)) {
         this.price = data().deepCopy(fields()[6].schema(), other.price);
         fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.location)) {
+        this.location = data().deepCopy(fields()[7].schema(), other.location);
+        fieldSetFlags()[7] = true;
       }
     }
 
@@ -612,6 +642,45 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /**
+      * Gets the value of the 'location' field.
+      * @return The value.
+      */
+    public java.lang.String getLocation() {
+      return location;
+    }
+
+    /**
+      * Sets the value of the 'location' field.
+      * @param value The value of 'location'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.WinNotice.Builder setLocation(java.lang.String value) {
+      validate(fields()[7], value);
+      this.location = value;
+      fieldSetFlags()[7] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'location' field has been set.
+      * @return True if the 'location' field has been set, false otherwise.
+      */
+    public boolean hasLocation() {
+      return fieldSetFlags()[7];
+    }
+
+
+    /**
+      * Clears the value of the 'location' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.WinNotice.Builder clearLocation() {
+      location = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public WinNotice build() {
@@ -624,6 +693,7 @@ public class WinNotice extends org.apache.avro.specific.SpecificRecordBase imple
         record.mediaid = fieldSetFlags()[4] ? this.mediaid : (java.lang.Long) defaultValue(fields()[4]);
         record.adspaceid = fieldSetFlags()[5] ? this.adspaceid : (java.lang.Long) defaultValue(fields()[5]);
         record.price = fieldSetFlags()[6] ? this.price : (java.lang.Integer) defaultValue(fields()[6]);
+        record.location = fieldSetFlags()[7] ? this.location : (java.lang.String) defaultValue(fields()[7]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
