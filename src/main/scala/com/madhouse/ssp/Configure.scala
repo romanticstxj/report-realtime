@@ -21,7 +21,7 @@ object Configure {
   implicit var config: Config = _
 
   def initConf(hadoopEnv: String, conf: String) = {
-    println(s"hadoop env: $hadoopEnv, config path: $conf")
+    logger(s"hadoop env: $hadoopEnv, config path: $conf")
 
     fs = FileSystem.get {
       val conf = ConfigFactory.load("hadoop").getConfig(hadoopEnv)

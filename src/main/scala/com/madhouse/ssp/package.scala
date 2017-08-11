@@ -1,6 +1,7 @@
 package com.madhouse
 
 import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeFormatter.ofPattern
 import java.time.{Instant, LocalDateTime, ZoneId}
 
 /**
@@ -12,6 +13,11 @@ package object ssp {
   implicit val jLong2Int: java.lang.Long => Int = _.toInt
 
   implicit val jInt2Long: java.lang.Integer => Long = _.toLong
+
+  val logger: String => Unit = { msg =>
+    val time = LocalDateTime.ofInstant(Instant.now(), zone).format(ofPattern("[yyyy-MM-dd HH:mm:ss]"))
+    println(s"[$time] $msg")
+  }
 
   val dayHour = (ts: Long) => {
     val instant = Instant.ofEpochMilli(ts)
