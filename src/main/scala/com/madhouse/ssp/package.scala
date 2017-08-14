@@ -15,7 +15,7 @@ package object ssp {
   implicit val jInt2Long: java.lang.Integer => Long = _.toLong
 
   val logger: String => Unit = { msg =>
-    val time = LocalDateTime.ofInstant(Instant.now(), zone).format(ofPattern("[yyyy-MM-dd HH:mm:ss]"))
+    val time = LocalDateTime.ofInstant(Instant.now(), zone).format(ofPattern("yyyy-MM-dd HH:mm:ss"))
     println(s"[$time] $msg")
   }
 

@@ -25,8 +25,6 @@ object ReportRT {
     initConf(hadoopEnv, configFile)
 
     val spark = SparkSession.builder.appName(s"ReportRT-$logType").master(sparkMaster).getOrCreate()
-
-    spark.sparkContext.setLogLevel("WARN")
     spark.sparkContext.hadoopConfiguration.addResource(fs.getConf)
 
     import spark.implicits._
