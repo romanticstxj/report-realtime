@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8342802055786640486L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DSPBid\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"deliverytype\",\"type\":\"int\"},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"winner\",\"type\":\"int\",\"default\":0},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"request\",\"type\":{\"type\":\"record\",\"name\":\"DSPRequest\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adtype\",\"type\":\"int\"},{\"name\":\"layout\",\"type\":\"int\"},{\"name\":\"tagid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"test\",\"type\":\"int\"},{\"name\":\"bidfloor\",\"type\":\"int\",\"default\":0},{\"name\":\"bidtype\",\"type\":\"int\",\"default\":1},{\"name\":\"tmax\",\"type\":\"int\",\"default\":120}]}},{\"name\":\"response\",\"type\":{\"type\":\"record\",\"name\":\"DSPResponse\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bidid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"crid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"price\",\"type\":\"int\",\"default\":0},{\"name\":\"nurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"admid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"icon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cover\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"desc\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"duration\",\"type\":\"int\",\"default\":0},{\"name\":\"adm\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lpgurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"acttype\",\"type\":\"int\",\"default\":1},{\"name\":\"monitor\",\"type\":{\"type\":\"record\",\"name\":\"Monitor\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}}]},\"default\":null}]}");
+  private static final long serialVersionUID = 8901840032629172749L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DSPBid\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"deliverytype\",\"type\":\"int\"},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"executetime\",\"type\":\"int\",\"default\":0},{\"name\":\"winner\",\"type\":\"int\",\"default\":0},{\"name\":\"request\",\"type\":{\"type\":\"record\",\"name\":\"DSPRequest\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adtype\",\"type\":\"int\"},{\"name\":\"layout\",\"type\":\"int\"},{\"name\":\"tagid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"test\",\"type\":\"int\"},{\"name\":\"bidfloor\",\"type\":\"int\",\"default\":0},{\"name\":\"bidtype\",\"type\":\"int\",\"default\":1},{\"name\":\"tmax\",\"type\":\"int\",\"default\":120}]}},{\"name\":\"response\",\"type\":{\"type\":\"record\",\"name\":\"DSPResponse\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bidid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"crid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"price\",\"type\":\"int\",\"default\":0},{\"name\":\"nurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"admid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"icon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cover\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"desc\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"duration\",\"type\":\"int\",\"default\":0},{\"name\":\"adm\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lpgurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"acttype\",\"type\":\"int\",\"default\":1},{\"name\":\"monitor\",\"type\":{\"type\":\"record\",\"name\":\"Monitor\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}}]},\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -57,9 +57,10 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
   @Deprecated public int deliverytype;
   @Deprecated public long mediaid;
   @Deprecated public long adspaceid;
-  @Deprecated public int status;
-  @Deprecated public int winner;
   @Deprecated public java.lang.String location;
+  @Deprecated public int status;
+  @Deprecated public int executetime;
+  @Deprecated public int winner;
   @Deprecated public com.madhouse.ssp.avro.DSPRequest request;
   @Deprecated public com.madhouse.ssp.avro.DSPResponse response;
 
@@ -78,22 +79,24 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param deliverytype The new value for deliverytype
    * @param mediaid The new value for mediaid
    * @param adspaceid The new value for adspaceid
-   * @param status The new value for status
-   * @param winner The new value for winner
    * @param location The new value for location
+   * @param status The new value for status
+   * @param executetime The new value for executetime
+   * @param winner The new value for winner
    * @param request The new value for request
    * @param response The new value for response
    */
-  public DSPBid(java.lang.Long time, java.lang.Long dspid, java.lang.Long policyid, java.lang.Integer deliverytype, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Integer status, java.lang.Integer winner, java.lang.String location, com.madhouse.ssp.avro.DSPRequest request, com.madhouse.ssp.avro.DSPResponse response) {
+  public DSPBid(java.lang.Long time, java.lang.Long dspid, java.lang.Long policyid, java.lang.Integer deliverytype, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.String location, java.lang.Integer status, java.lang.Integer executetime, java.lang.Integer winner, com.madhouse.ssp.avro.DSPRequest request, com.madhouse.ssp.avro.DSPResponse response) {
     this.time = time;
     this.dspid = dspid;
     this.policyid = policyid;
     this.deliverytype = deliverytype;
     this.mediaid = mediaid;
     this.adspaceid = adspaceid;
-    this.status = status;
-    this.winner = winner;
     this.location = location;
+    this.status = status;
+    this.executetime = executetime;
+    this.winner = winner;
     this.request = request;
     this.response = response;
   }
@@ -108,11 +111,12 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     case 3: return deliverytype;
     case 4: return mediaid;
     case 5: return adspaceid;
-    case 6: return status;
-    case 7: return winner;
-    case 8: return location;
-    case 9: return request;
-    case 10: return response;
+    case 6: return location;
+    case 7: return status;
+    case 8: return executetime;
+    case 9: return winner;
+    case 10: return request;
+    case 11: return response;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -127,11 +131,12 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     case 3: deliverytype = (java.lang.Integer)value$; break;
     case 4: mediaid = (java.lang.Long)value$; break;
     case 5: adspaceid = (java.lang.Long)value$; break;
-    case 6: status = (java.lang.Integer)value$; break;
-    case 7: winner = (java.lang.Integer)value$; break;
-    case 8: location = (java.lang.String)value$; break;
-    case 9: request = (com.madhouse.ssp.avro.DSPRequest)value$; break;
-    case 10: response = (com.madhouse.ssp.avro.DSPResponse)value$; break;
+    case 6: location = (java.lang.String)value$; break;
+    case 7: status = (java.lang.Integer)value$; break;
+    case 8: executetime = (java.lang.Integer)value$; break;
+    case 9: winner = (java.lang.Integer)value$; break;
+    case 10: request = (com.madhouse.ssp.avro.DSPRequest)value$; break;
+    case 11: response = (com.madhouse.ssp.avro.DSPResponse)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -233,6 +238,22 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
+   * Gets the value of the 'location' field.
+   * @return The value of the 'location' field.
+   */
+  public java.lang.String getLocation() {
+    return location;
+  }
+
+  /**
+   * Sets the value of the 'location' field.
+   * @param value the value to set.
+   */
+  public void setLocation(java.lang.String value) {
+    this.location = value;
+  }
+
+  /**
    * Gets the value of the 'status' field.
    * @return The value of the 'status' field.
    */
@@ -249,6 +270,22 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
+   * Gets the value of the 'executetime' field.
+   * @return The value of the 'executetime' field.
+   */
+  public java.lang.Integer getExecutetime() {
+    return executetime;
+  }
+
+  /**
+   * Sets the value of the 'executetime' field.
+   * @param value the value to set.
+   */
+  public void setExecutetime(java.lang.Integer value) {
+    this.executetime = value;
+  }
+
+  /**
    * Gets the value of the 'winner' field.
    * @return The value of the 'winner' field.
    */
@@ -262,22 +299,6 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
    */
   public void setWinner(java.lang.Integer value) {
     this.winner = value;
-  }
-
-  /**
-   * Gets the value of the 'location' field.
-   * @return The value of the 'location' field.
-   */
-  public java.lang.String getLocation() {
-    return location;
-  }
-
-  /**
-   * Sets the value of the 'location' field.
-   * @param value the value to set.
-   */
-  public void setLocation(java.lang.String value) {
-    this.location = value;
   }
 
   /**
@@ -350,9 +371,10 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     private int deliverytype;
     private long mediaid;
     private long adspaceid;
-    private int status;
-    private int winner;
     private java.lang.String location;
+    private int status;
+    private int executetime;
+    private int winner;
     private com.madhouse.ssp.avro.DSPRequest request;
     private com.madhouse.ssp.avro.DSPRequest.Builder requestBuilder;
     private com.madhouse.ssp.avro.DSPResponse response;
@@ -393,28 +415,32 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
         this.adspaceid = data().deepCopy(fields()[5].schema(), other.adspaceid);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.status)) {
-        this.status = data().deepCopy(fields()[6].schema(), other.status);
+      if (isValidValue(fields()[6], other.location)) {
+        this.location = data().deepCopy(fields()[6].schema(), other.location);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.winner)) {
-        this.winner = data().deepCopy(fields()[7].schema(), other.winner);
+      if (isValidValue(fields()[7], other.status)) {
+        this.status = data().deepCopy(fields()[7].schema(), other.status);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.location)) {
-        this.location = data().deepCopy(fields()[8].schema(), other.location);
+      if (isValidValue(fields()[8], other.executetime)) {
+        this.executetime = data().deepCopy(fields()[8].schema(), other.executetime);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.request)) {
-        this.request = data().deepCopy(fields()[9].schema(), other.request);
+      if (isValidValue(fields()[9], other.winner)) {
+        this.winner = data().deepCopy(fields()[9].schema(), other.winner);
         fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.request)) {
+        this.request = data().deepCopy(fields()[10].schema(), other.request);
+        fieldSetFlags()[10] = true;
       }
       if (other.hasRequestBuilder()) {
         this.requestBuilder = com.madhouse.ssp.avro.DSPRequest.newBuilder(other.getRequestBuilder());
       }
-      if (isValidValue(fields()[10], other.response)) {
-        this.response = data().deepCopy(fields()[10].schema(), other.response);
-        fieldSetFlags()[10] = true;
+      if (isValidValue(fields()[11], other.response)) {
+        this.response = data().deepCopy(fields()[11].schema(), other.response);
+        fieldSetFlags()[11] = true;
       }
       if (other.hasResponseBuilder()) {
         this.responseBuilder = com.madhouse.ssp.avro.DSPResponse.newBuilder(other.getResponseBuilder());
@@ -451,26 +477,30 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
         this.adspaceid = data().deepCopy(fields()[5].schema(), other.adspaceid);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.status)) {
-        this.status = data().deepCopy(fields()[6].schema(), other.status);
+      if (isValidValue(fields()[6], other.location)) {
+        this.location = data().deepCopy(fields()[6].schema(), other.location);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.winner)) {
-        this.winner = data().deepCopy(fields()[7].schema(), other.winner);
+      if (isValidValue(fields()[7], other.status)) {
+        this.status = data().deepCopy(fields()[7].schema(), other.status);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.location)) {
-        this.location = data().deepCopy(fields()[8].schema(), other.location);
+      if (isValidValue(fields()[8], other.executetime)) {
+        this.executetime = data().deepCopy(fields()[8].schema(), other.executetime);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.request)) {
-        this.request = data().deepCopy(fields()[9].schema(), other.request);
+      if (isValidValue(fields()[9], other.winner)) {
+        this.winner = data().deepCopy(fields()[9].schema(), other.winner);
         fieldSetFlags()[9] = true;
       }
-      this.requestBuilder = null;
-      if (isValidValue(fields()[10], other.response)) {
-        this.response = data().deepCopy(fields()[10].schema(), other.response);
+      if (isValidValue(fields()[10], other.request)) {
+        this.request = data().deepCopy(fields()[10].schema(), other.request);
         fieldSetFlags()[10] = true;
+      }
+      this.requestBuilder = null;
+      if (isValidValue(fields()[11], other.response)) {
+        this.response = data().deepCopy(fields()[11].schema(), other.response);
+        fieldSetFlags()[11] = true;
       }
       this.responseBuilder = null;
     }
@@ -704,6 +734,45 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     }
 
     /**
+      * Gets the value of the 'location' field.
+      * @return The value.
+      */
+    public java.lang.String getLocation() {
+      return location;
+    }
+
+    /**
+      * Sets the value of the 'location' field.
+      * @param value The value of 'location'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.DSPBid.Builder setLocation(java.lang.String value) {
+      validate(fields()[6], value);
+      this.location = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'location' field has been set.
+      * @return True if the 'location' field has been set, false otherwise.
+      */
+    public boolean hasLocation() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'location' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.DSPBid.Builder clearLocation() {
+      location = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'status' field.
       * @return The value.
       */
@@ -717,9 +786,9 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder setStatus(int value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.status = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -728,7 +797,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -737,7 +806,45 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder clearStatus() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'executetime' field.
+      * @return The value.
+      */
+    public java.lang.Integer getExecutetime() {
+      return executetime;
+    }
+
+    /**
+      * Sets the value of the 'executetime' field.
+      * @param value The value of 'executetime'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.DSPBid.Builder setExecutetime(int value) {
+      validate(fields()[8], value);
+      this.executetime = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'executetime' field has been set.
+      * @return True if the 'executetime' field has been set, false otherwise.
+      */
+    public boolean hasExecutetime() {
+      return fieldSetFlags()[8];
+    }
+
+
+    /**
+      * Clears the value of the 'executetime' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.DSPBid.Builder clearExecutetime() {
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -755,9 +862,9 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder setWinner(int value) {
-      validate(fields()[7], value);
+      validate(fields()[9], value);
       this.winner = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -766,7 +873,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'winner' field has been set, false otherwise.
       */
     public boolean hasWinner() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[9];
     }
 
 
@@ -775,46 +882,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder clearWinner() {
-      fieldSetFlags()[7] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'location' field.
-      * @return The value.
-      */
-    public java.lang.String getLocation() {
-      return location;
-    }
-
-    /**
-      * Sets the value of the 'location' field.
-      * @param value The value of 'location'.
-      * @return This builder.
-      */
-    public com.madhouse.ssp.avro.DSPBid.Builder setLocation(java.lang.String value) {
-      validate(fields()[8], value);
-      this.location = value;
-      fieldSetFlags()[8] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'location' field has been set.
-      * @return True if the 'location' field has been set, false otherwise.
-      */
-    public boolean hasLocation() {
-      return fieldSetFlags()[8];
-    }
-
-
-    /**
-      * Clears the value of the 'location' field.
-      * @return This builder.
-      */
-    public com.madhouse.ssp.avro.DSPBid.Builder clearLocation() {
-      location = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -832,10 +900,10 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder setRequest(com.madhouse.ssp.avro.DSPRequest value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.requestBuilder = null;
       this.request = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -844,7 +912,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'request' field has been set, false otherwise.
       */
     public boolean hasRequest() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
     /**
@@ -888,7 +956,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     public com.madhouse.ssp.avro.DSPBid.Builder clearRequest() {
       request = null;
       requestBuilder = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -906,10 +974,10 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return This builder.
       */
     public com.madhouse.ssp.avro.DSPBid.Builder setResponse(com.madhouse.ssp.avro.DSPResponse value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.responseBuilder = null;
       this.response = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -918,7 +986,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'response' field has been set, false otherwise.
       */
     public boolean hasResponse() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
     /**
@@ -962,7 +1030,7 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
     public com.madhouse.ssp.avro.DSPBid.Builder clearResponse() {
       response = null;
       responseBuilder = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -977,18 +1045,19 @@ public class DSPBid extends org.apache.avro.specific.SpecificRecordBase implemen
         record.deliverytype = fieldSetFlags()[3] ? this.deliverytype : (java.lang.Integer) defaultValue(fields()[3]);
         record.mediaid = fieldSetFlags()[4] ? this.mediaid : (java.lang.Long) defaultValue(fields()[4]);
         record.adspaceid = fieldSetFlags()[5] ? this.adspaceid : (java.lang.Long) defaultValue(fields()[5]);
-        record.status = fieldSetFlags()[6] ? this.status : (java.lang.Integer) defaultValue(fields()[6]);
-        record.winner = fieldSetFlags()[7] ? this.winner : (java.lang.Integer) defaultValue(fields()[7]);
-        record.location = fieldSetFlags()[8] ? this.location : (java.lang.String) defaultValue(fields()[8]);
+        record.location = fieldSetFlags()[6] ? this.location : (java.lang.String) defaultValue(fields()[6]);
+        record.status = fieldSetFlags()[7] ? this.status : (java.lang.Integer) defaultValue(fields()[7]);
+        record.executetime = fieldSetFlags()[8] ? this.executetime : (java.lang.Integer) defaultValue(fields()[8]);
+        record.winner = fieldSetFlags()[9] ? this.winner : (java.lang.Integer) defaultValue(fields()[9]);
         if (requestBuilder != null) {
           record.request = this.requestBuilder.build();
         } else {
-          record.request = fieldSetFlags()[9] ? this.request : (com.madhouse.ssp.avro.DSPRequest) defaultValue(fields()[9]);
+          record.request = fieldSetFlags()[10] ? this.request : (com.madhouse.ssp.avro.DSPRequest) defaultValue(fields()[10]);
         }
         if (responseBuilder != null) {
           record.response = this.responseBuilder.build();
         } else {
-          record.response = fieldSetFlags()[10] ? this.response : (com.madhouse.ssp.avro.DSPResponse) defaultValue(fields()[10]);
+          record.response = fieldSetFlags()[11] ? this.response : (com.madhouse.ssp.avro.DSPResponse) defaultValue(fields()[11]);
         }
         return record;
       } catch (java.lang.Exception e) {
