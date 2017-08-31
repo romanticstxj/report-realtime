@@ -10,10 +10,6 @@ import java.time.{Instant, LocalDateTime, ZoneId}
 package object ssp {
   val zone = ZoneId.of("Asia/Shanghai")
 
-  implicit val jLong2Int: java.lang.Long => Int = _.toInt
-
-  implicit val jInt2Long: java.lang.Integer => Long = _.toLong
-
   val logger: String => Unit = { msg =>
     val time = LocalDateTime.ofInstant(Instant.now(), zone).format(ofPattern("yyyy-MM-dd HH:mm:ss"))
     println(s"[$time] $msg")
@@ -43,10 +39,10 @@ package object ssp {
     }
   }
 
-  val impClkCount = (status: Int) => {
+  val trackerCountAndMoney = (status: Int, income: Long, cost: Long) => {
     status match {
-      case 0 => (1L, 0L)
-      case _ => (0L, 1L)
+      case 0 => (1L, 1L, income, cost)
+      case _ => (1L, 0L, 0L, 0L)
     }
   }
 }

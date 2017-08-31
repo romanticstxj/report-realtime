@@ -16,32 +16,35 @@ import scala.collection.JavaConversions._
   */
 object Configure {
 
-  var fs: FileSystem = _
+  val fs: FileSystem = sys.props.get("hadoop.env") match {
+    case Some(env) =>
+      logger(s"hadoop environment: $env")
+      FileSystem.get {
+        val conf = ConfigFactory.load("hadoop").getConfig(env)
 
-  implicit var config: Config = _
-
-  def initConf(hadoopEnv: String, conf: String) = {
-    logger(s"hadoop env: $hadoopEnv, config path: $conf")
-
-    fs = FileSystem.get {
-      val conf = ConfigFactory.load("hadoop").getConfig(hadoopEnv)
-
-      val configuration = new Configuration()
-      conf.entrySet().iterator() foreach { c =>
-        val key = c.getKey
-        configuration.set(c.getKey, conf.getString(key))
+        val configuration = new Configuration()
+        conf.entrySet().iterator() foreach { c =>
+          val key = c.getKey
+          configuration.set(c.getKey, conf.getString(key))
+        }
+        configuration
       }
-      configuration
-    }
-
-    config = if (conf.startsWith("file://")) {
-      ConfigFactory.parseFile(new File(new URI(conf))).getConfig("app")
-    } else {
-      val path = new Path(conf)
-      ConfigFactory.parseReader(new InputStreamReader(fs.open(path, 10240))).getConfig("app")
-    }
+    case None =>
+      throw new IllegalArgumentException("hadoop.env is not set")
   }
 
+  implicit private val config: Config = sys.props.get("config.file") match {
+    case Some(file) =>
+      logger(s"config file: $file")
+      if (file.startsWith("file://")) {
+        ConfigFactory.parseFile(new File(new URI(file))).getConfig("app")
+      } else {
+        val path = new Path(file)
+        ConfigFactory.parseReader(new InputStreamReader(fs.open(path, 10240))).getConfig("app")
+      }
+    case None =>
+      throw new IllegalArgumentException("config.file is not set")
+  }
 
   private def getOrElse[T](path: String, default: T)(implicit config: Config) = {
     if (config.hasPath(path))
@@ -55,15 +58,15 @@ object Configure {
     else default
   }
 
-  lazy val sparkMaster = getOrElse("spark.master", "local[*]")
-  lazy val startingOffsets = getOrElse("spark.streaming.starting_offsets", "earliest")
-  lazy val maxOffsetsPerTrigger = getOrElse("spark.streaming.max_offsets_per_trigger", "10240")
-  lazy val processingTimeMs = getOrElse("spark.streaming.trigger_processing_time_ms", 30000)
+  val sparkMaster = getOrElse("spark.master", "local[*]")
+  val startingOffsets = getOrElse("spark.streaming.starting_offsets", "latest")
+  val maxOffsetsPerTrigger = getOrElse("spark.streaming.max_offsets_per_trigger", "10240")
+  val processingTimeMs = getOrElse("spark.streaming.trigger_processing_time_ms", 30000)
 
-  lazy val kafkaBootstrapServers = getOrElse("kafka.bootstrap_servers", "localhost:9092")
-  lazy val topicName = getOrElse("kafka.topic_name", "")
+  val kafkaBootstrapServers = getOrElse("kafka.bootstrap_servers", "localhost:9092")
+  val topicName = getOrElse("kafka.topic_name", "")
 
-  lazy val jdbcConf = {
+  val jdbcConf = {
     val conf = config.getConfig("mysql")
     val url = conf.getString("url")
     val user = getOrElse("user", "root")(conf)
@@ -73,5 +76,5 @@ object Configure {
     JDBCConf(url, user, pwd, table, size)
   }
 
-  lazy val logType = LogType.withName(getOrElse("log_type", ""))
+  val logType = LogType.withName(getOrElse("log_type", ""))
 }

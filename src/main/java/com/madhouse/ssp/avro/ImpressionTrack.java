@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -5627098169146127444L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ImpressionTrack\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"invalid\",\"type\":\"int\",\"default\":0},{\"name\":\"ext\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"income\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":\"int\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -2394946958236852356L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ImpressionTrack\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"bidtime\",\"type\":\"long\",\"default\":0},{\"name\":\"invalid\",\"type\":\"int\",\"default\":0},{\"name\":\"ext\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"income\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":\"int\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -59,6 +59,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
   @Deprecated public long mediaid;
   @Deprecated public long adspaceid;
   @Deprecated public long policyid;
+  @Deprecated public long bidtime;
   @Deprecated public int invalid;
   @Deprecated public java.lang.String ext;
   @Deprecated public long dspid;
@@ -83,6 +84,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
    * @param mediaid The new value for mediaid
    * @param adspaceid The new value for adspaceid
    * @param policyid The new value for policyid
+   * @param bidtime The new value for bidtime
    * @param invalid The new value for invalid
    * @param ext The new value for ext
    * @param dspid The new value for dspid
@@ -90,7 +92,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
    * @param cost The new value for cost
    * @param location The new value for location
    */
-  public ImpressionTrack(java.lang.Long time, java.lang.String ua, java.lang.String ip, java.lang.Integer status, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Long policyid, java.lang.Integer invalid, java.lang.String ext, java.lang.Long dspid, java.lang.Integer income, java.lang.Integer cost, java.lang.String location) {
+  public ImpressionTrack(java.lang.Long time, java.lang.String ua, java.lang.String ip, java.lang.Integer status, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Long policyid, java.lang.Long bidtime, java.lang.Integer invalid, java.lang.String ext, java.lang.Long dspid, java.lang.Integer income, java.lang.Integer cost, java.lang.String location) {
     this.time = time;
     this.ua = ua;
     this.ip = ip;
@@ -99,6 +101,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
     this.mediaid = mediaid;
     this.adspaceid = adspaceid;
     this.policyid = policyid;
+    this.bidtime = bidtime;
     this.invalid = invalid;
     this.ext = ext;
     this.dspid = dspid;
@@ -119,12 +122,13 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
     case 5: return mediaid;
     case 6: return adspaceid;
     case 7: return policyid;
-    case 8: return invalid;
-    case 9: return ext;
-    case 10: return dspid;
-    case 11: return income;
-    case 12: return cost;
-    case 13: return location;
+    case 8: return bidtime;
+    case 9: return invalid;
+    case 10: return ext;
+    case 11: return dspid;
+    case 12: return income;
+    case 13: return cost;
+    case 14: return location;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -141,12 +145,13 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
     case 5: mediaid = (java.lang.Long)value$; break;
     case 6: adspaceid = (java.lang.Long)value$; break;
     case 7: policyid = (java.lang.Long)value$; break;
-    case 8: invalid = (java.lang.Integer)value$; break;
-    case 9: ext = (java.lang.String)value$; break;
-    case 10: dspid = (java.lang.Long)value$; break;
-    case 11: income = (java.lang.Integer)value$; break;
-    case 12: cost = (java.lang.Integer)value$; break;
-    case 13: location = (java.lang.String)value$; break;
+    case 8: bidtime = (java.lang.Long)value$; break;
+    case 9: invalid = (java.lang.Integer)value$; break;
+    case 10: ext = (java.lang.String)value$; break;
+    case 11: dspid = (java.lang.Long)value$; break;
+    case 12: income = (java.lang.Integer)value$; break;
+    case 13: cost = (java.lang.Integer)value$; break;
+    case 14: location = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -277,6 +282,22 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
    */
   public void setPolicyid(java.lang.Long value) {
     this.policyid = value;
+  }
+
+  /**
+   * Gets the value of the 'bidtime' field.
+   * @return The value of the 'bidtime' field.
+   */
+  public java.lang.Long getBidtime() {
+    return bidtime;
+  }
+
+  /**
+   * Sets the value of the 'bidtime' field.
+   * @param value the value to set.
+   */
+  public void setBidtime(java.lang.Long value) {
+    this.bidtime = value;
   }
 
   /**
@@ -415,6 +436,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
     private long mediaid;
     private long adspaceid;
     private long policyid;
+    private long bidtime;
     private int invalid;
     private java.lang.String ext;
     private long dspid;
@@ -465,29 +487,33 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
         this.policyid = data().deepCopy(fields()[7].schema(), other.policyid);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.invalid)) {
-        this.invalid = data().deepCopy(fields()[8].schema(), other.invalid);
+      if (isValidValue(fields()[8], other.bidtime)) {
+        this.bidtime = data().deepCopy(fields()[8].schema(), other.bidtime);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.ext)) {
-        this.ext = data().deepCopy(fields()[9].schema(), other.ext);
+      if (isValidValue(fields()[9], other.invalid)) {
+        this.invalid = data().deepCopy(fields()[9].schema(), other.invalid);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.dspid)) {
-        this.dspid = data().deepCopy(fields()[10].schema(), other.dspid);
+      if (isValidValue(fields()[10], other.ext)) {
+        this.ext = data().deepCopy(fields()[10].schema(), other.ext);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.income)) {
-        this.income = data().deepCopy(fields()[11].schema(), other.income);
+      if (isValidValue(fields()[11], other.dspid)) {
+        this.dspid = data().deepCopy(fields()[11].schema(), other.dspid);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.cost)) {
-        this.cost = data().deepCopy(fields()[12].schema(), other.cost);
+      if (isValidValue(fields()[12], other.income)) {
+        this.income = data().deepCopy(fields()[12].schema(), other.income);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.location)) {
-        this.location = data().deepCopy(fields()[13].schema(), other.location);
+      if (isValidValue(fields()[13], other.cost)) {
+        this.cost = data().deepCopy(fields()[13].schema(), other.cost);
         fieldSetFlags()[13] = true;
+      }
+      if (isValidValue(fields()[14], other.location)) {
+        this.location = data().deepCopy(fields()[14].schema(), other.location);
+        fieldSetFlags()[14] = true;
       }
     }
 
@@ -529,29 +555,33 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
         this.policyid = data().deepCopy(fields()[7].schema(), other.policyid);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.invalid)) {
-        this.invalid = data().deepCopy(fields()[8].schema(), other.invalid);
+      if (isValidValue(fields()[8], other.bidtime)) {
+        this.bidtime = data().deepCopy(fields()[8].schema(), other.bidtime);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.ext)) {
-        this.ext = data().deepCopy(fields()[9].schema(), other.ext);
+      if (isValidValue(fields()[9], other.invalid)) {
+        this.invalid = data().deepCopy(fields()[9].schema(), other.invalid);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.dspid)) {
-        this.dspid = data().deepCopy(fields()[10].schema(), other.dspid);
+      if (isValidValue(fields()[10], other.ext)) {
+        this.ext = data().deepCopy(fields()[10].schema(), other.ext);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.income)) {
-        this.income = data().deepCopy(fields()[11].schema(), other.income);
+      if (isValidValue(fields()[11], other.dspid)) {
+        this.dspid = data().deepCopy(fields()[11].schema(), other.dspid);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.cost)) {
-        this.cost = data().deepCopy(fields()[12].schema(), other.cost);
+      if (isValidValue(fields()[12], other.income)) {
+        this.income = data().deepCopy(fields()[12].schema(), other.income);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.location)) {
-        this.location = data().deepCopy(fields()[13].schema(), other.location);
+      if (isValidValue(fields()[13], other.cost)) {
+        this.cost = data().deepCopy(fields()[13].schema(), other.cost);
         fieldSetFlags()[13] = true;
+      }
+      if (isValidValue(fields()[14], other.location)) {
+        this.location = data().deepCopy(fields()[14].schema(), other.location);
+        fieldSetFlags()[14] = true;
       }
     }
 
@@ -863,6 +893,44 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
     }
 
     /**
+      * Gets the value of the 'bidtime' field.
+      * @return The value.
+      */
+    public java.lang.Long getBidtime() {
+      return bidtime;
+    }
+
+    /**
+      * Sets the value of the 'bidtime' field.
+      * @param value The value of 'bidtime'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.ImpressionTrack.Builder setBidtime(long value) {
+      validate(fields()[8], value);
+      this.bidtime = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'bidtime' field has been set.
+      * @return True if the 'bidtime' field has been set, false otherwise.
+      */
+    public boolean hasBidtime() {
+      return fieldSetFlags()[8];
+    }
+
+
+    /**
+      * Clears the value of the 'bidtime' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.ImpressionTrack.Builder clearBidtime() {
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'invalid' field.
       * @return The value.
       */
@@ -876,9 +944,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setInvalid(int value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.invalid = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -887,7 +955,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'invalid' field has been set, false otherwise.
       */
     public boolean hasInvalid() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -896,7 +964,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearInvalid() {
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -914,9 +982,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setExt(java.lang.String value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.ext = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -925,7 +993,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'ext' field has been set, false otherwise.
       */
     public boolean hasExt() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -935,7 +1003,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearExt() {
       ext = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -953,9 +1021,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setDspid(long value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.dspid = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -964,7 +1032,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'dspid' field has been set, false otherwise.
       */
     public boolean hasDspid() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -973,7 +1041,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearDspid() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -991,9 +1059,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setIncome(int value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.income = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1002,7 +1070,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'income' field has been set, false otherwise.
       */
     public boolean hasIncome() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1011,7 +1079,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearIncome() {
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1029,9 +1097,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setCost(int value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.cost = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1040,7 +1108,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'cost' field has been set, false otherwise.
       */
     public boolean hasCost() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1049,7 +1117,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearCost() {
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1067,9 +1135,9 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder setLocation(java.lang.String value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.location = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this;
     }
 
@@ -1078,7 +1146,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       * @return True if the 'location' field has been set, false otherwise.
       */
     public boolean hasLocation() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1088,7 +1156,7 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
       */
     public com.madhouse.ssp.avro.ImpressionTrack.Builder clearLocation() {
       location = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1105,12 +1173,13 @@ public class ImpressionTrack extends org.apache.avro.specific.SpecificRecordBase
         record.mediaid = fieldSetFlags()[5] ? this.mediaid : (java.lang.Long) defaultValue(fields()[5]);
         record.adspaceid = fieldSetFlags()[6] ? this.adspaceid : (java.lang.Long) defaultValue(fields()[6]);
         record.policyid = fieldSetFlags()[7] ? this.policyid : (java.lang.Long) defaultValue(fields()[7]);
-        record.invalid = fieldSetFlags()[8] ? this.invalid : (java.lang.Integer) defaultValue(fields()[8]);
-        record.ext = fieldSetFlags()[9] ? this.ext : (java.lang.String) defaultValue(fields()[9]);
-        record.dspid = fieldSetFlags()[10] ? this.dspid : (java.lang.Long) defaultValue(fields()[10]);
-        record.income = fieldSetFlags()[11] ? this.income : (java.lang.Integer) defaultValue(fields()[11]);
-        record.cost = fieldSetFlags()[12] ? this.cost : (java.lang.Integer) defaultValue(fields()[12]);
-        record.location = fieldSetFlags()[13] ? this.location : (java.lang.String) defaultValue(fields()[13]);
+        record.bidtime = fieldSetFlags()[8] ? this.bidtime : (java.lang.Long) defaultValue(fields()[8]);
+        record.invalid = fieldSetFlags()[9] ? this.invalid : (java.lang.Integer) defaultValue(fields()[9]);
+        record.ext = fieldSetFlags()[10] ? this.ext : (java.lang.String) defaultValue(fields()[10]);
+        record.dspid = fieldSetFlags()[11] ? this.dspid : (java.lang.Long) defaultValue(fields()[11]);
+        record.income = fieldSetFlags()[12] ? this.income : (java.lang.Integer) defaultValue(fields()[12]);
+        record.cost = fieldSetFlags()[13] ? this.cost : (java.lang.Integer) defaultValue(fields()[13]);
+        record.location = fieldSetFlags()[14] ? this.location : (java.lang.String) defaultValue(fields()[14]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

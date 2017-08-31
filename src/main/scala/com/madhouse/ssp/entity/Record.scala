@@ -1,5 +1,7 @@
 package com.madhouse.ssp.entity
 
+import com.madhouse.ssp.entity.LogType._
+
 
 /**
   * Created by Sunxiang on 2017-08-02 15:03.
@@ -7,13 +9,21 @@ package com.madhouse.ssp.entity
   */
 trait Record extends Serializable
 
-case class MediaBidRecord(mediaId: Int, adSpaceId: Int, day: String, hour: Int, reqs: Long, bids: Long, errs: Long) extends Record
+case class MediaBidRecord(mediaId: Int, adSpaceId: Int, date: String, hour: Int, reqs: Long, bids: Long, errs: Long) extends Record
 
-case class DspBidRecord(policyId: Int, dspId: Int, day: String, hour: Int, reqs: Long, bids: Long, wins: Long, timeouts: Long, errs: Long) extends Record
+case class DspBidRecord(policyId: Int, dspId: Int, date: String, hour: Int, reqs: Long, bids: Long, wins: Long, timeouts: Long, errs: Long) extends Record
 
-case class ImpressionRecord(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, day: String, hour: Int, imps: Long, vimps: Long, income: Long, cost: Long) extends Record
+case class TrackerRecord(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, date: String, hour: Int, imps: Long, clks: Long, vimps: Long, vclks: Long, income: Long, cost: Long) extends Record
 
-case class ClickRecord(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, day: String, hour: Int, imps: Long, vimps: Long, income: Long, cost: Long) extends Record
+case class ReportData(var reqs: Long, var bids: Long, var wins: Long, var timeouts: Long, var errs: Long, var imps: Long, var clks: Long, var vimps: Long, var vclks: Long, var income: Long, var cost: Long) {
+
+  def toSeq(logType: LogType) = logType match {
+    case MEDIABID => Seq(reqs, bids, errs)
+    case DSPBID => Seq(reqs, bids, wins, timeouts, errs)
+    case IMPRESSION | CLICK => Seq(imps, clks, vimps, vclks, income, cost)
+  }
+}
+
 
 object MediaBidRecord {
   def apply(mediaId: Int, adSpaceId: Int, dayHour: String, count: (Long, Long, Long)) = {
@@ -35,24 +45,24 @@ object DspBidRecord {
   }
 }
 
-private [ssp] object ImpressionRecord {
-  def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, count: (Long, Long), income: Long, cost: Long) = {
+object ImpressionRecord {
+  def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, countAndMoney: (Long, Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')
       (ps(0), (ps(1).toInt))
     }
 
-    new ImpressionRecord(mediaId, adSpaceId, policyId, dspId, day, hour, count._1, count._2, income * 10, cost * 10)
+    new TrackerRecord(mediaId, adSpaceId, policyId, dspId, day, hour, countAndMoney._1, 0L, countAndMoney._2, 0L, countAndMoney._3, countAndMoney._4)
   }
 }
 
-private [ssp]object ClickRecord {
-  def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, count: (Long, Long), income: Long, cost: Long) = {
+object ClickRecord {
+  def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, countAndMoney: (Long, Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')
       (ps(0), (ps(1).toInt))
     }
 
-    new ClickRecord(mediaId, adSpaceId, policyId, dspId, day, hour, count._1, count._2, income * 10000, cost * 101)
+    new TrackerRecord(mediaId, adSpaceId, policyId, dspId, day, hour, 0L, countAndMoney._1, 0L, countAndMoney._2, countAndMoney._3 * 1000, countAndMoney._4 * 1000)
   }
 }

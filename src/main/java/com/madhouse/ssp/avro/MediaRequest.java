@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1104054426327409364L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MediaRequest\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"bid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"mediaid\",\"type\":\"long\",\"default\":0},{\"name\":\"category\",\"type\":\"int\",\"default\":0},{\"name\":\"type\",\"type\":\"int\"},{\"name\":\"bundle\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adspaceid\",\"type\":\"long\",\"default\":0},{\"name\":\"adspacekey\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adtype\",\"type\":\"int\"},{\"name\":\"w\",\"type\":\"int\"},{\"name\":\"h\",\"type\":\"int\"},{\"name\":\"did\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"didmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dpid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dpidmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"mac\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"macmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ifa\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"carrier\",\"type\":\"int\",\"default\":0},{\"name\":\"connectiontype\",\"type\":\"int\",\"default\":0},{\"name\":\"devicetype\",\"type\":\"int\",\"default\":0},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lon\",\"type\":\"float\",\"default\":0},{\"name\":\"lat\",\"type\":\"float\",\"default\":0},{\"name\":\"os\",\"type\":\"int\",\"default\":0},{\"name\":\"osv\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"make\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"model\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cell\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cellmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"tags\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"test\",\"type\":\"int\",\"default\":0},{\"name\":\"bidfloor\",\"type\":\"int\",\"default\":0}]}");
+  private static final long serialVersionUID = -4784936089447475519L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MediaRequest\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"bid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"mediaid\",\"type\":\"long\",\"default\":0},{\"name\":\"category\",\"type\":\"int\",\"default\":0},{\"name\":\"type\",\"type\":\"int\"},{\"name\":\"bundle\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adspaceid\",\"type\":\"long\",\"default\":0},{\"name\":\"adspacekey\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"adtype\",\"type\":\"int\"},{\"name\":\"w\",\"type\":\"int\"},{\"name\":\"h\",\"type\":\"int\"},{\"name\":\"did\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"didmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dpid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dpidmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"mac\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"macmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ifa\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"carrier\",\"type\":\"int\",\"default\":0},{\"name\":\"connectiontype\",\"type\":\"int\",\"default\":0},{\"name\":\"devicetype\",\"type\":\"int\",\"default\":0},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Geo\",\"fields\":[{\"name\":\"type\",\"type\":\"int\",\"default\":0},{\"name\":\"lat\",\"type\":\"float\",\"default\":0},{\"name\":\"lon\",\"type\":\"float\",\"default\":0}]}],\"default\":null},{\"name\":\"os\",\"type\":\"int\",\"default\":0},{\"name\":\"osv\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"make\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"model\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cell\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cellmd5\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"tags\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"test\",\"type\":\"int\",\"default\":0},{\"name\":\"bidfloor\",\"type\":\"int\",\"default\":0}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -73,8 +73,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
   @Deprecated public int connectiontype;
   @Deprecated public int devicetype;
   @Deprecated public java.lang.String dealid;
-  @Deprecated public float lon;
-  @Deprecated public float lat;
+  @Deprecated public com.madhouse.ssp.avro.Geo geo;
   @Deprecated public int os;
   @Deprecated public java.lang.String osv;
   @Deprecated public java.lang.String ip;
@@ -118,8 +117,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
    * @param connectiontype The new value for connectiontype
    * @param devicetype The new value for devicetype
    * @param dealid The new value for dealid
-   * @param lon The new value for lon
-   * @param lat The new value for lat
+   * @param geo The new value for geo
    * @param os The new value for os
    * @param osv The new value for osv
    * @param ip The new value for ip
@@ -132,7 +130,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
    * @param test The new value for test
    * @param bidfloor The new value for bidfloor
    */
-  public MediaRequest(java.lang.String bid, java.lang.Long mediaid, java.lang.Integer category, java.lang.Integer type, java.lang.String bundle, java.lang.String name, java.lang.Long adspaceid, java.lang.String adspacekey, java.lang.Integer adtype, java.lang.Integer w, java.lang.Integer h, java.lang.String did, java.lang.String didmd5, java.lang.String dpid, java.lang.String dpidmd5, java.lang.String mac, java.lang.String macmd5, java.lang.String ifa, java.lang.Integer carrier, java.lang.Integer connectiontype, java.lang.Integer devicetype, java.lang.String dealid, java.lang.Float lon, java.lang.Float lat, java.lang.Integer os, java.lang.String osv, java.lang.String ip, java.lang.String ua, java.lang.String make, java.lang.String model, java.lang.String cell, java.lang.String cellmd5, java.util.List<java.lang.String> tags, java.lang.Integer test, java.lang.Integer bidfloor) {
+  public MediaRequest(java.lang.String bid, java.lang.Long mediaid, java.lang.Integer category, java.lang.Integer type, java.lang.String bundle, java.lang.String name, java.lang.Long adspaceid, java.lang.String adspacekey, java.lang.Integer adtype, java.lang.Integer w, java.lang.Integer h, java.lang.String did, java.lang.String didmd5, java.lang.String dpid, java.lang.String dpidmd5, java.lang.String mac, java.lang.String macmd5, java.lang.String ifa, java.lang.Integer carrier, java.lang.Integer connectiontype, java.lang.Integer devicetype, java.lang.String dealid, com.madhouse.ssp.avro.Geo geo, java.lang.Integer os, java.lang.String osv, java.lang.String ip, java.lang.String ua, java.lang.String make, java.lang.String model, java.lang.String cell, java.lang.String cellmd5, java.util.List<java.lang.String> tags, java.lang.Integer test, java.lang.Integer bidfloor) {
     this.bid = bid;
     this.mediaid = mediaid;
     this.category = category;
@@ -155,8 +153,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
     this.connectiontype = connectiontype;
     this.devicetype = devicetype;
     this.dealid = dealid;
-    this.lon = lon;
-    this.lat = lat;
+    this.geo = geo;
     this.os = os;
     this.osv = osv;
     this.ip = ip;
@@ -196,19 +193,18 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
     case 19: return connectiontype;
     case 20: return devicetype;
     case 21: return dealid;
-    case 22: return lon;
-    case 23: return lat;
-    case 24: return os;
-    case 25: return osv;
-    case 26: return ip;
-    case 27: return ua;
-    case 28: return make;
-    case 29: return model;
-    case 30: return cell;
-    case 31: return cellmd5;
-    case 32: return tags;
-    case 33: return test;
-    case 34: return bidfloor;
+    case 22: return geo;
+    case 23: return os;
+    case 24: return osv;
+    case 25: return ip;
+    case 26: return ua;
+    case 27: return make;
+    case 28: return model;
+    case 29: return cell;
+    case 30: return cellmd5;
+    case 31: return tags;
+    case 32: return test;
+    case 33: return bidfloor;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -239,19 +235,18 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
     case 19: connectiontype = (java.lang.Integer)value$; break;
     case 20: devicetype = (java.lang.Integer)value$; break;
     case 21: dealid = (java.lang.String)value$; break;
-    case 22: lon = (java.lang.Float)value$; break;
-    case 23: lat = (java.lang.Float)value$; break;
-    case 24: os = (java.lang.Integer)value$; break;
-    case 25: osv = (java.lang.String)value$; break;
-    case 26: ip = (java.lang.String)value$; break;
-    case 27: ua = (java.lang.String)value$; break;
-    case 28: make = (java.lang.String)value$; break;
-    case 29: model = (java.lang.String)value$; break;
-    case 30: cell = (java.lang.String)value$; break;
-    case 31: cellmd5 = (java.lang.String)value$; break;
-    case 32: tags = (java.util.List<java.lang.String>)value$; break;
-    case 33: test = (java.lang.Integer)value$; break;
-    case 34: bidfloor = (java.lang.Integer)value$; break;
+    case 22: geo = (com.madhouse.ssp.avro.Geo)value$; break;
+    case 23: os = (java.lang.Integer)value$; break;
+    case 24: osv = (java.lang.String)value$; break;
+    case 25: ip = (java.lang.String)value$; break;
+    case 26: ua = (java.lang.String)value$; break;
+    case 27: make = (java.lang.String)value$; break;
+    case 28: model = (java.lang.String)value$; break;
+    case 29: cell = (java.lang.String)value$; break;
+    case 30: cellmd5 = (java.lang.String)value$; break;
+    case 31: tags = (java.util.List<java.lang.String>)value$; break;
+    case 32: test = (java.lang.Integer)value$; break;
+    case 33: bidfloor = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -609,35 +604,19 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
-   * Gets the value of the 'lon' field.
-   * @return The value of the 'lon' field.
+   * Gets the value of the 'geo' field.
+   * @return The value of the 'geo' field.
    */
-  public java.lang.Float getLon() {
-    return lon;
+  public com.madhouse.ssp.avro.Geo getGeo() {
+    return geo;
   }
 
   /**
-   * Sets the value of the 'lon' field.
+   * Sets the value of the 'geo' field.
    * @param value the value to set.
    */
-  public void setLon(java.lang.Float value) {
-    this.lon = value;
-  }
-
-  /**
-   * Gets the value of the 'lat' field.
-   * @return The value of the 'lat' field.
-   */
-  public java.lang.Float getLat() {
-    return lat;
-  }
-
-  /**
-   * Sets the value of the 'lat' field.
-   * @param value the value to set.
-   */
-  public void setLat(java.lang.Float value) {
-    this.lat = value;
+  public void setGeo(com.madhouse.ssp.avro.Geo value) {
+    this.geo = value;
   }
 
   /**
@@ -870,8 +849,8 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
     private int connectiontype;
     private int devicetype;
     private java.lang.String dealid;
-    private float lon;
-    private float lat;
+    private com.madhouse.ssp.avro.Geo geo;
+    private com.madhouse.ssp.avro.Geo.Builder geoBuilder;
     private int os;
     private java.lang.String osv;
     private java.lang.String ip;
@@ -983,57 +962,56 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
         this.dealid = data().deepCopy(fields()[21].schema(), other.dealid);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.lon)) {
-        this.lon = data().deepCopy(fields()[22].schema(), other.lon);
+      if (isValidValue(fields()[22], other.geo)) {
+        this.geo = data().deepCopy(fields()[22].schema(), other.geo);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.lat)) {
-        this.lat = data().deepCopy(fields()[23].schema(), other.lat);
+      if (other.hasGeoBuilder()) {
+        this.geoBuilder = com.madhouse.ssp.avro.Geo.newBuilder(other.getGeoBuilder());
+      }
+      if (isValidValue(fields()[23], other.os)) {
+        this.os = data().deepCopy(fields()[23].schema(), other.os);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.os)) {
-        this.os = data().deepCopy(fields()[24].schema(), other.os);
+      if (isValidValue(fields()[24], other.osv)) {
+        this.osv = data().deepCopy(fields()[24].schema(), other.osv);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.osv)) {
-        this.osv = data().deepCopy(fields()[25].schema(), other.osv);
+      if (isValidValue(fields()[25], other.ip)) {
+        this.ip = data().deepCopy(fields()[25].schema(), other.ip);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.ip)) {
-        this.ip = data().deepCopy(fields()[26].schema(), other.ip);
+      if (isValidValue(fields()[26], other.ua)) {
+        this.ua = data().deepCopy(fields()[26].schema(), other.ua);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.ua)) {
-        this.ua = data().deepCopy(fields()[27].schema(), other.ua);
+      if (isValidValue(fields()[27], other.make)) {
+        this.make = data().deepCopy(fields()[27].schema(), other.make);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.make)) {
-        this.make = data().deepCopy(fields()[28].schema(), other.make);
+      if (isValidValue(fields()[28], other.model)) {
+        this.model = data().deepCopy(fields()[28].schema(), other.model);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.model)) {
-        this.model = data().deepCopy(fields()[29].schema(), other.model);
+      if (isValidValue(fields()[29], other.cell)) {
+        this.cell = data().deepCopy(fields()[29].schema(), other.cell);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.cell)) {
-        this.cell = data().deepCopy(fields()[30].schema(), other.cell);
+      if (isValidValue(fields()[30], other.cellmd5)) {
+        this.cellmd5 = data().deepCopy(fields()[30].schema(), other.cellmd5);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.cellmd5)) {
-        this.cellmd5 = data().deepCopy(fields()[31].schema(), other.cellmd5);
+      if (isValidValue(fields()[31], other.tags)) {
+        this.tags = data().deepCopy(fields()[31].schema(), other.tags);
         fieldSetFlags()[31] = true;
       }
-      if (isValidValue(fields()[32], other.tags)) {
-        this.tags = data().deepCopy(fields()[32].schema(), other.tags);
+      if (isValidValue(fields()[32], other.test)) {
+        this.test = data().deepCopy(fields()[32].schema(), other.test);
         fieldSetFlags()[32] = true;
       }
-      if (isValidValue(fields()[33], other.test)) {
-        this.test = data().deepCopy(fields()[33].schema(), other.test);
+      if (isValidValue(fields()[33], other.bidfloor)) {
+        this.bidfloor = data().deepCopy(fields()[33].schema(), other.bidfloor);
         fieldSetFlags()[33] = true;
-      }
-      if (isValidValue(fields()[34], other.bidfloor)) {
-        this.bidfloor = data().deepCopy(fields()[34].schema(), other.bidfloor);
-        fieldSetFlags()[34] = true;
       }
     }
 
@@ -1131,57 +1109,54 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
         this.dealid = data().deepCopy(fields()[21].schema(), other.dealid);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.lon)) {
-        this.lon = data().deepCopy(fields()[22].schema(), other.lon);
+      if (isValidValue(fields()[22], other.geo)) {
+        this.geo = data().deepCopy(fields()[22].schema(), other.geo);
         fieldSetFlags()[22] = true;
       }
-      if (isValidValue(fields()[23], other.lat)) {
-        this.lat = data().deepCopy(fields()[23].schema(), other.lat);
+      this.geoBuilder = null;
+      if (isValidValue(fields()[23], other.os)) {
+        this.os = data().deepCopy(fields()[23].schema(), other.os);
         fieldSetFlags()[23] = true;
       }
-      if (isValidValue(fields()[24], other.os)) {
-        this.os = data().deepCopy(fields()[24].schema(), other.os);
+      if (isValidValue(fields()[24], other.osv)) {
+        this.osv = data().deepCopy(fields()[24].schema(), other.osv);
         fieldSetFlags()[24] = true;
       }
-      if (isValidValue(fields()[25], other.osv)) {
-        this.osv = data().deepCopy(fields()[25].schema(), other.osv);
+      if (isValidValue(fields()[25], other.ip)) {
+        this.ip = data().deepCopy(fields()[25].schema(), other.ip);
         fieldSetFlags()[25] = true;
       }
-      if (isValidValue(fields()[26], other.ip)) {
-        this.ip = data().deepCopy(fields()[26].schema(), other.ip);
+      if (isValidValue(fields()[26], other.ua)) {
+        this.ua = data().deepCopy(fields()[26].schema(), other.ua);
         fieldSetFlags()[26] = true;
       }
-      if (isValidValue(fields()[27], other.ua)) {
-        this.ua = data().deepCopy(fields()[27].schema(), other.ua);
+      if (isValidValue(fields()[27], other.make)) {
+        this.make = data().deepCopy(fields()[27].schema(), other.make);
         fieldSetFlags()[27] = true;
       }
-      if (isValidValue(fields()[28], other.make)) {
-        this.make = data().deepCopy(fields()[28].schema(), other.make);
+      if (isValidValue(fields()[28], other.model)) {
+        this.model = data().deepCopy(fields()[28].schema(), other.model);
         fieldSetFlags()[28] = true;
       }
-      if (isValidValue(fields()[29], other.model)) {
-        this.model = data().deepCopy(fields()[29].schema(), other.model);
+      if (isValidValue(fields()[29], other.cell)) {
+        this.cell = data().deepCopy(fields()[29].schema(), other.cell);
         fieldSetFlags()[29] = true;
       }
-      if (isValidValue(fields()[30], other.cell)) {
-        this.cell = data().deepCopy(fields()[30].schema(), other.cell);
+      if (isValidValue(fields()[30], other.cellmd5)) {
+        this.cellmd5 = data().deepCopy(fields()[30].schema(), other.cellmd5);
         fieldSetFlags()[30] = true;
       }
-      if (isValidValue(fields()[31], other.cellmd5)) {
-        this.cellmd5 = data().deepCopy(fields()[31].schema(), other.cellmd5);
+      if (isValidValue(fields()[31], other.tags)) {
+        this.tags = data().deepCopy(fields()[31].schema(), other.tags);
         fieldSetFlags()[31] = true;
       }
-      if (isValidValue(fields()[32], other.tags)) {
-        this.tags = data().deepCopy(fields()[32].schema(), other.tags);
+      if (isValidValue(fields()[32], other.test)) {
+        this.test = data().deepCopy(fields()[32].schema(), other.test);
         fieldSetFlags()[32] = true;
       }
-      if (isValidValue(fields()[33], other.test)) {
-        this.test = data().deepCopy(fields()[33].schema(), other.test);
+      if (isValidValue(fields()[33], other.bidfloor)) {
+        this.bidfloor = data().deepCopy(fields()[33].schema(), other.bidfloor);
         fieldSetFlags()[33] = true;
-      }
-      if (isValidValue(fields()[34], other.bidfloor)) {
-        this.bidfloor = data().deepCopy(fields()[34].schema(), other.bidfloor);
-        fieldSetFlags()[34] = true;
       }
     }
 
@@ -2034,78 +2009,76 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
     }
 
     /**
-      * Gets the value of the 'lon' field.
+      * Gets the value of the 'geo' field.
       * @return The value.
       */
-    public java.lang.Float getLon() {
-      return lon;
+    public com.madhouse.ssp.avro.Geo getGeo() {
+      return geo;
     }
 
     /**
-      * Sets the value of the 'lon' field.
-      * @param value The value of 'lon'.
+      * Sets the value of the 'geo' field.
+      * @param value The value of 'geo'.
       * @return This builder.
       */
-    public com.madhouse.ssp.avro.MediaRequest.Builder setLon(float value) {
+    public com.madhouse.ssp.avro.MediaRequest.Builder setGeo(com.madhouse.ssp.avro.Geo value) {
       validate(fields()[22], value);
-      this.lon = value;
+      this.geoBuilder = null;
+      this.geo = value;
       fieldSetFlags()[22] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'lon' field has been set.
-      * @return True if the 'lon' field has been set, false otherwise.
+      * Checks whether the 'geo' field has been set.
+      * @return True if the 'geo' field has been set, false otherwise.
       */
-    public boolean hasLon() {
+    public boolean hasGeo() {
       return fieldSetFlags()[22];
     }
 
+    /**
+     * Gets the Builder instance for the 'geo' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.madhouse.ssp.avro.Geo.Builder getGeoBuilder() {
+      if (geoBuilder == null) {
+        if (hasGeo()) {
+          setGeoBuilder(com.madhouse.ssp.avro.Geo.newBuilder(geo));
+        } else {
+          setGeoBuilder(com.madhouse.ssp.avro.Geo.newBuilder());
+        }
+      }
+      return geoBuilder;
+    }
 
     /**
-      * Clears the value of the 'lon' field.
+     * Sets the Builder instance for the 'geo' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.madhouse.ssp.avro.MediaRequest.Builder setGeoBuilder(com.madhouse.ssp.avro.Geo.Builder value) {
+      clearGeo();
+      geoBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'geo' field has an active Builder instance
+     * @return True if the 'geo' field has an active Builder instance
+     */
+    public boolean hasGeoBuilder() {
+      return geoBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'geo' field.
       * @return This builder.
       */
-    public com.madhouse.ssp.avro.MediaRequest.Builder clearLon() {
+    public com.madhouse.ssp.avro.MediaRequest.Builder clearGeo() {
+      geo = null;
+      geoBuilder = null;
       fieldSetFlags()[22] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'lat' field.
-      * @return The value.
-      */
-    public java.lang.Float getLat() {
-      return lat;
-    }
-
-    /**
-      * Sets the value of the 'lat' field.
-      * @param value The value of 'lat'.
-      * @return This builder.
-      */
-    public com.madhouse.ssp.avro.MediaRequest.Builder setLat(float value) {
-      validate(fields()[23], value);
-      this.lat = value;
-      fieldSetFlags()[23] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'lat' field has been set.
-      * @return True if the 'lat' field has been set, false otherwise.
-      */
-    public boolean hasLat() {
-      return fieldSetFlags()[23];
-    }
-
-
-    /**
-      * Clears the value of the 'lat' field.
-      * @return This builder.
-      */
-    public com.madhouse.ssp.avro.MediaRequest.Builder clearLat() {
-      fieldSetFlags()[23] = false;
       return this;
     }
 
@@ -2123,9 +2096,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setOs(int value) {
-      validate(fields()[24], value);
+      validate(fields()[23], value);
       this.os = value;
-      fieldSetFlags()[24] = true;
+      fieldSetFlags()[23] = true;
       return this;
     }
 
@@ -2134,7 +2107,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'os' field has been set, false otherwise.
       */
     public boolean hasOs() {
-      return fieldSetFlags()[24];
+      return fieldSetFlags()[23];
     }
 
 
@@ -2143,7 +2116,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearOs() {
-      fieldSetFlags()[24] = false;
+      fieldSetFlags()[23] = false;
       return this;
     }
 
@@ -2161,9 +2134,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setOsv(java.lang.String value) {
-      validate(fields()[25], value);
+      validate(fields()[24], value);
       this.osv = value;
-      fieldSetFlags()[25] = true;
+      fieldSetFlags()[24] = true;
       return this;
     }
 
@@ -2172,7 +2145,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'osv' field has been set, false otherwise.
       */
     public boolean hasOsv() {
-      return fieldSetFlags()[25];
+      return fieldSetFlags()[24];
     }
 
 
@@ -2182,7 +2155,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearOsv() {
       osv = null;
-      fieldSetFlags()[25] = false;
+      fieldSetFlags()[24] = false;
       return this;
     }
 
@@ -2200,9 +2173,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setIp(java.lang.String value) {
-      validate(fields()[26], value);
+      validate(fields()[25], value);
       this.ip = value;
-      fieldSetFlags()[26] = true;
+      fieldSetFlags()[25] = true;
       return this;
     }
 
@@ -2211,7 +2184,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'ip' field has been set, false otherwise.
       */
     public boolean hasIp() {
-      return fieldSetFlags()[26];
+      return fieldSetFlags()[25];
     }
 
 
@@ -2221,7 +2194,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearIp() {
       ip = null;
-      fieldSetFlags()[26] = false;
+      fieldSetFlags()[25] = false;
       return this;
     }
 
@@ -2239,9 +2212,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setUa(java.lang.String value) {
-      validate(fields()[27], value);
+      validate(fields()[26], value);
       this.ua = value;
-      fieldSetFlags()[27] = true;
+      fieldSetFlags()[26] = true;
       return this;
     }
 
@@ -2250,7 +2223,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'ua' field has been set, false otherwise.
       */
     public boolean hasUa() {
-      return fieldSetFlags()[27];
+      return fieldSetFlags()[26];
     }
 
 
@@ -2260,7 +2233,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearUa() {
       ua = null;
-      fieldSetFlags()[27] = false;
+      fieldSetFlags()[26] = false;
       return this;
     }
 
@@ -2278,9 +2251,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setMake(java.lang.String value) {
-      validate(fields()[28], value);
+      validate(fields()[27], value);
       this.make = value;
-      fieldSetFlags()[28] = true;
+      fieldSetFlags()[27] = true;
       return this;
     }
 
@@ -2289,7 +2262,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'make' field has been set, false otherwise.
       */
     public boolean hasMake() {
-      return fieldSetFlags()[28];
+      return fieldSetFlags()[27];
     }
 
 
@@ -2299,7 +2272,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearMake() {
       make = null;
-      fieldSetFlags()[28] = false;
+      fieldSetFlags()[27] = false;
       return this;
     }
 
@@ -2317,9 +2290,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setModel(java.lang.String value) {
-      validate(fields()[29], value);
+      validate(fields()[28], value);
       this.model = value;
-      fieldSetFlags()[29] = true;
+      fieldSetFlags()[28] = true;
       return this;
     }
 
@@ -2328,7 +2301,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'model' field has been set, false otherwise.
       */
     public boolean hasModel() {
-      return fieldSetFlags()[29];
+      return fieldSetFlags()[28];
     }
 
 
@@ -2338,7 +2311,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearModel() {
       model = null;
-      fieldSetFlags()[29] = false;
+      fieldSetFlags()[28] = false;
       return this;
     }
 
@@ -2356,9 +2329,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setCell(java.lang.String value) {
-      validate(fields()[30], value);
+      validate(fields()[29], value);
       this.cell = value;
-      fieldSetFlags()[30] = true;
+      fieldSetFlags()[29] = true;
       return this;
     }
 
@@ -2367,7 +2340,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'cell' field has been set, false otherwise.
       */
     public boolean hasCell() {
-      return fieldSetFlags()[30];
+      return fieldSetFlags()[29];
     }
 
 
@@ -2377,7 +2350,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearCell() {
       cell = null;
-      fieldSetFlags()[30] = false;
+      fieldSetFlags()[29] = false;
       return this;
     }
 
@@ -2395,9 +2368,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setCellmd5(java.lang.String value) {
-      validate(fields()[31], value);
+      validate(fields()[30], value);
       this.cellmd5 = value;
-      fieldSetFlags()[31] = true;
+      fieldSetFlags()[30] = true;
       return this;
     }
 
@@ -2406,7 +2379,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'cellmd5' field has been set, false otherwise.
       */
     public boolean hasCellmd5() {
-      return fieldSetFlags()[31];
+      return fieldSetFlags()[30];
     }
 
 
@@ -2416,7 +2389,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearCellmd5() {
       cellmd5 = null;
-      fieldSetFlags()[31] = false;
+      fieldSetFlags()[30] = false;
       return this;
     }
 
@@ -2434,9 +2407,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setTags(java.util.List<java.lang.String> value) {
-      validate(fields()[32], value);
+      validate(fields()[31], value);
       this.tags = value;
-      fieldSetFlags()[32] = true;
+      fieldSetFlags()[31] = true;
       return this;
     }
 
@@ -2445,7 +2418,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'tags' field has been set, false otherwise.
       */
     public boolean hasTags() {
-      return fieldSetFlags()[32];
+      return fieldSetFlags()[31];
     }
 
 
@@ -2455,7 +2428,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearTags() {
       tags = null;
-      fieldSetFlags()[32] = false;
+      fieldSetFlags()[31] = false;
       return this;
     }
 
@@ -2473,9 +2446,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setTest(int value) {
-      validate(fields()[33], value);
+      validate(fields()[32], value);
       this.test = value;
-      fieldSetFlags()[33] = true;
+      fieldSetFlags()[32] = true;
       return this;
     }
 
@@ -2484,7 +2457,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'test' field has been set, false otherwise.
       */
     public boolean hasTest() {
-      return fieldSetFlags()[33];
+      return fieldSetFlags()[32];
     }
 
 
@@ -2493,7 +2466,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearTest() {
-      fieldSetFlags()[33] = false;
+      fieldSetFlags()[32] = false;
       return this;
     }
 
@@ -2511,9 +2484,9 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder setBidfloor(int value) {
-      validate(fields()[34], value);
+      validate(fields()[33], value);
       this.bidfloor = value;
-      fieldSetFlags()[34] = true;
+      fieldSetFlags()[33] = true;
       return this;
     }
 
@@ -2522,7 +2495,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return True if the 'bidfloor' field has been set, false otherwise.
       */
     public boolean hasBidfloor() {
-      return fieldSetFlags()[34];
+      return fieldSetFlags()[33];
     }
 
 
@@ -2531,7 +2504,7 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaRequest.Builder clearBidfloor() {
-      fieldSetFlags()[34] = false;
+      fieldSetFlags()[33] = false;
       return this;
     }
 
@@ -2562,19 +2535,22 @@ public class MediaRequest extends org.apache.avro.specific.SpecificRecordBase im
         record.connectiontype = fieldSetFlags()[19] ? this.connectiontype : (java.lang.Integer) defaultValue(fields()[19]);
         record.devicetype = fieldSetFlags()[20] ? this.devicetype : (java.lang.Integer) defaultValue(fields()[20]);
         record.dealid = fieldSetFlags()[21] ? this.dealid : (java.lang.String) defaultValue(fields()[21]);
-        record.lon = fieldSetFlags()[22] ? this.lon : (java.lang.Float) defaultValue(fields()[22]);
-        record.lat = fieldSetFlags()[23] ? this.lat : (java.lang.Float) defaultValue(fields()[23]);
-        record.os = fieldSetFlags()[24] ? this.os : (java.lang.Integer) defaultValue(fields()[24]);
-        record.osv = fieldSetFlags()[25] ? this.osv : (java.lang.String) defaultValue(fields()[25]);
-        record.ip = fieldSetFlags()[26] ? this.ip : (java.lang.String) defaultValue(fields()[26]);
-        record.ua = fieldSetFlags()[27] ? this.ua : (java.lang.String) defaultValue(fields()[27]);
-        record.make = fieldSetFlags()[28] ? this.make : (java.lang.String) defaultValue(fields()[28]);
-        record.model = fieldSetFlags()[29] ? this.model : (java.lang.String) defaultValue(fields()[29]);
-        record.cell = fieldSetFlags()[30] ? this.cell : (java.lang.String) defaultValue(fields()[30]);
-        record.cellmd5 = fieldSetFlags()[31] ? this.cellmd5 : (java.lang.String) defaultValue(fields()[31]);
-        record.tags = fieldSetFlags()[32] ? this.tags : (java.util.List<java.lang.String>) defaultValue(fields()[32]);
-        record.test = fieldSetFlags()[33] ? this.test : (java.lang.Integer) defaultValue(fields()[33]);
-        record.bidfloor = fieldSetFlags()[34] ? this.bidfloor : (java.lang.Integer) defaultValue(fields()[34]);
+        if (geoBuilder != null) {
+          record.geo = this.geoBuilder.build();
+        } else {
+          record.geo = fieldSetFlags()[22] ? this.geo : (com.madhouse.ssp.avro.Geo) defaultValue(fields()[22]);
+        }
+        record.os = fieldSetFlags()[23] ? this.os : (java.lang.Integer) defaultValue(fields()[23]);
+        record.osv = fieldSetFlags()[24] ? this.osv : (java.lang.String) defaultValue(fields()[24]);
+        record.ip = fieldSetFlags()[25] ? this.ip : (java.lang.String) defaultValue(fields()[25]);
+        record.ua = fieldSetFlags()[26] ? this.ua : (java.lang.String) defaultValue(fields()[26]);
+        record.make = fieldSetFlags()[27] ? this.make : (java.lang.String) defaultValue(fields()[27]);
+        record.model = fieldSetFlags()[28] ? this.model : (java.lang.String) defaultValue(fields()[28]);
+        record.cell = fieldSetFlags()[29] ? this.cell : (java.lang.String) defaultValue(fields()[29]);
+        record.cellmd5 = fieldSetFlags()[30] ? this.cellmd5 : (java.lang.String) defaultValue(fields()[30]);
+        record.tags = fieldSetFlags()[31] ? this.tags : (java.util.List<java.lang.String>) defaultValue(fields()[31]);
+        record.test = fieldSetFlags()[32] ? this.test : (java.lang.Integer) defaultValue(fields()[32]);
+        record.bidfloor = fieldSetFlags()[33] ? this.bidfloor : (java.lang.Integer) defaultValue(fields()[33]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

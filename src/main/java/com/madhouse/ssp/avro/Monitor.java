@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Monitor extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7549292319603533900L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Monitor\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}},\"default\":null},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null}]}");
+  private static final long serialVersionUID = -3307725049903812603L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Monitor\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}},\"default\":null},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"exptime\",\"type\":\"int\",\"default\":86400},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,6 +54,7 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
   @Deprecated public java.util.List<com.madhouse.ssp.avro.Track> impurl;
   @Deprecated public java.util.List<java.lang.String> clkurl;
   @Deprecated public java.util.List<java.lang.String> securl;
+  @Deprecated public int exptime;
   @Deprecated public java.util.List<java.lang.String> exts;
 
   /**
@@ -68,12 +69,14 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param impurl The new value for impurl
    * @param clkurl The new value for clkurl
    * @param securl The new value for securl
+   * @param exptime The new value for exptime
    * @param exts The new value for exts
    */
-  public Monitor(java.util.List<com.madhouse.ssp.avro.Track> impurl, java.util.List<java.lang.String> clkurl, java.util.List<java.lang.String> securl, java.util.List<java.lang.String> exts) {
+  public Monitor(java.util.List<com.madhouse.ssp.avro.Track> impurl, java.util.List<java.lang.String> clkurl, java.util.List<java.lang.String> securl, java.lang.Integer exptime, java.util.List<java.lang.String> exts) {
     this.impurl = impurl;
     this.clkurl = clkurl;
     this.securl = securl;
+    this.exptime = exptime;
     this.exts = exts;
   }
 
@@ -84,7 +87,8 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
     case 0: return impurl;
     case 1: return clkurl;
     case 2: return securl;
-    case 3: return exts;
+    case 3: return exptime;
+    case 4: return exts;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -96,7 +100,8 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
     case 0: impurl = (java.util.List<com.madhouse.ssp.avro.Track>)value$; break;
     case 1: clkurl = (java.util.List<java.lang.String>)value$; break;
     case 2: securl = (java.util.List<java.lang.String>)value$; break;
-    case 3: exts = (java.util.List<java.lang.String>)value$; break;
+    case 3: exptime = (java.lang.Integer)value$; break;
+    case 4: exts = (java.util.List<java.lang.String>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -150,6 +155,22 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   /**
+   * Gets the value of the 'exptime' field.
+   * @return The value of the 'exptime' field.
+   */
+  public java.lang.Integer getExptime() {
+    return exptime;
+  }
+
+  /**
+   * Sets the value of the 'exptime' field.
+   * @param value the value to set.
+   */
+  public void setExptime(java.lang.Integer value) {
+    this.exptime = value;
+  }
+
+  /**
    * Gets the value of the 'exts' field.
    * @return The value of the 'exts' field.
    */
@@ -200,6 +221,7 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
     private java.util.List<com.madhouse.ssp.avro.Track> impurl;
     private java.util.List<java.lang.String> clkurl;
     private java.util.List<java.lang.String> securl;
+    private int exptime;
     private java.util.List<java.lang.String> exts;
 
     /** Creates a new Builder */
@@ -225,9 +247,13 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
         this.securl = data().deepCopy(fields()[2].schema(), other.securl);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.exts)) {
-        this.exts = data().deepCopy(fields()[3].schema(), other.exts);
+      if (isValidValue(fields()[3], other.exptime)) {
+        this.exptime = data().deepCopy(fields()[3].schema(), other.exptime);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.exts)) {
+        this.exts = data().deepCopy(fields()[4].schema(), other.exts);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -249,9 +275,13 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
         this.securl = data().deepCopy(fields()[2].schema(), other.securl);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.exts)) {
-        this.exts = data().deepCopy(fields()[3].schema(), other.exts);
+      if (isValidValue(fields()[3], other.exptime)) {
+        this.exptime = data().deepCopy(fields()[3].schema(), other.exptime);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.exts)) {
+        this.exts = data().deepCopy(fields()[4].schema(), other.exts);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -373,6 +403,44 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
     }
 
     /**
+      * Gets the value of the 'exptime' field.
+      * @return The value.
+      */
+    public java.lang.Integer getExptime() {
+      return exptime;
+    }
+
+    /**
+      * Sets the value of the 'exptime' field.
+      * @param value The value of 'exptime'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.Monitor.Builder setExptime(int value) {
+      validate(fields()[3], value);
+      this.exptime = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'exptime' field has been set.
+      * @return True if the 'exptime' field has been set, false otherwise.
+      */
+    public boolean hasExptime() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'exptime' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.Monitor.Builder clearExptime() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'exts' field.
       * @return The value.
       */
@@ -386,9 +454,9 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public com.madhouse.ssp.avro.Monitor.Builder setExts(java.util.List<java.lang.String> value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.exts = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -397,7 +465,7 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'exts' field has been set, false otherwise.
       */
     public boolean hasExts() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -407,7 +475,7 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
       */
     public com.madhouse.ssp.avro.Monitor.Builder clearExts() {
       exts = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -419,7 +487,8 @@ public class Monitor extends org.apache.avro.specific.SpecificRecordBase impleme
         record.impurl = fieldSetFlags()[0] ? this.impurl : (java.util.List<com.madhouse.ssp.avro.Track>) defaultValue(fields()[0]);
         record.clkurl = fieldSetFlags()[1] ? this.clkurl : (java.util.List<java.lang.String>) defaultValue(fields()[1]);
         record.securl = fieldSetFlags()[2] ? this.securl : (java.util.List<java.lang.String>) defaultValue(fields()[2]);
-        record.exts = fieldSetFlags()[3] ? this.exts : (java.util.List<java.lang.String>) defaultValue(fields()[3]);
+        record.exptime = fieldSetFlags()[3] ? this.exptime : (java.lang.Integer) defaultValue(fields()[3]);
+        record.exts = fieldSetFlags()[4] ? this.exts : (java.util.List<java.lang.String>) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
