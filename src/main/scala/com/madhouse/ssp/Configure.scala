@@ -9,41 +9,21 @@ import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}
 
-import scala.collection.JavaConversions._
-
 /**
   * Created by Sunxiang on 2017-07-27 09:12.
   */
-object Configure {
+class Configure(file: String) extends Serializable {
 
-  val fs: FileSystem = sys.props.get("hadoop.env") match {
-    case Some(env) =>
-      logger(s"hadoop environment: $env")
-      FileSystem.get {
-        val conf = ConfigFactory.load("hadoop").getConfig(env)
+  val fs: FileSystem = FileSystem.get(new Configuration())
 
-        val configuration = new Configuration()
-        conf.entrySet().iterator() foreach { c =>
-          val key = c.getKey
-          configuration.set(c.getKey, conf.getString(key))
-        }
-        configuration
-      }
-    case None =>
-      throw new IllegalArgumentException("hadoop.env is not set")
-  }
-
-  implicit private val config: Config = sys.props.get("config.file") match {
-    case Some(file) =>
-      logger(s"config file: $file")
-      if (file.startsWith("file://")) {
-        ConfigFactory.parseFile(new File(new URI(file))).getConfig("app")
-      } else {
-        val path = new Path(file)
-        ConfigFactory.parseReader(new InputStreamReader(fs.open(path, 10240))).getConfig("app")
-      }
-    case None =>
-      throw new IllegalArgumentException("config.file is not set")
+  implicit private val config: Config = {
+    logger(s"config file: $file")
+    val uri = new URI(file)
+    uri.getScheme match {
+      case "file" => ConfigFactory.parseFile(new File(uri)).getConfig("app")
+      case "hdfs" => ConfigFactory.parseReader(new InputStreamReader(fs.open(new Path(uri), 10240))).getConfig("app")
+      case _ => throw new IllegalArgumentException(s"unknown config: $file")
+    }
   }
 
   private def getOrElse[T](path: String, default: T)(implicit config: Config) = {
@@ -58,7 +38,6 @@ object Configure {
     else default
   }
 
-  val sparkMaster = getOrElse("spark.master", "local[*]")
   val startingOffsets = getOrElse("spark.streaming.starting_offsets", "latest")
   val maxOffsetsPerTrigger = getOrElse("spark.streaming.max_offsets_per_trigger", "10240")
   val processingTimeMs = getOrElse("spark.streaming.trigger_processing_time_ms", 30000)

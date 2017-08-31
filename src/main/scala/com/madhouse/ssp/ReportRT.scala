@@ -9,13 +9,17 @@ import org.apache.spark.sql.streaming.Trigger
 import scala.concurrent.duration._
 
 object ReportRT {
-  import Configure._
   import LogType._
 
   def main(args: Array[String]): Unit = {
 
-    val spark = SparkSession.builder.appName(s"ReportRT-$logType").master(sparkMaster).getOrCreate()
-    spark.sparkContext.hadoopConfiguration.addResource(fs.getConf)
+    require(args.length == 1, s"config file is not set")
+
+    implicit val configure = new Configure(args(0))
+    import configure._
+
+
+    val spark = SparkSession.builder.appName(s"ReportRT-$logType").getOrCreate()
     spark.sparkContext.setLogLevel("WARN")
 
     import spark.implicits._
@@ -59,7 +63,7 @@ object ReportRT {
 
     val schema = result.schema
 
-    result.filter(_ != null).writeStream
+    result.writeStream
       .queryName(s"ReportRT-$logType-Query")
       .outputMode("append")
       .foreach(new JDBCSink(schema, logType, jdbcConf))
