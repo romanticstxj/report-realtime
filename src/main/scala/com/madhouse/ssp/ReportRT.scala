@@ -67,7 +67,7 @@ object ReportRT {
       .queryName(s"ReportRT-$logType-Query")
       .outputMode("append")
       .foreach(new JDBCSink(schema, logType, jdbcConf))
-      .option("checkpointLocation", s"/spark/dev/checkpoint/$topicName")
+      .option("checkpointLocation", s"/spark/checkpoint/$topicName")
       .trigger(Trigger.ProcessingTime(processingTimeMs millis))
       .start()
       .awaitTermination()
