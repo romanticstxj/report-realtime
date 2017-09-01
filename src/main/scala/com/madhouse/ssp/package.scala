@@ -42,7 +42,8 @@ package object ssp {
   val trackerCountAndMoney = (status: Int, income: Long, cost: Long) => {
     status match {
       case 0 => (1L, 1L, income, cost)
-      case _ => (1L, 0L, 0L, 0L)
+      case x if (x > 0) => (1L, 0L, 0L, 0L)
+      case _ => (0L, 0L, 0L, 0L)
     }
   }
 }
