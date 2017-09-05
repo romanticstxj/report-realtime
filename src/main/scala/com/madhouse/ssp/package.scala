@@ -24,6 +24,7 @@ package object ssp {
   val mediaCount = (status: Int) => {
     status match {     //(reqs, bids, errs)
       case 200        => (1L, 1L, 0L)
+      case 204        => (1L, 0L, 0L)
       case 400 | 500  => (1L, 0L, 1L)
       case _          => (1L, 0L, 0L)
     }
@@ -33,6 +34,7 @@ package object ssp {
     val wins = if (winner > 0) 1L else 0L
     status match {     //(reqs, bids, wins, tos, errs)
       case 200        => (1L, 1L, wins, 0L, 0L)
+      case 204        => (1L, 0L, 0L, 0L, 0L)
       case 400 | 500  => (1L, 0L, 0L, 0L, 1L)
       case 408        => (1L, 0L, 0L, 1L, 0L)
       case _          => (1L, 0L, 0L, 0L, 0L)
