@@ -4,16 +4,17 @@
 > #####  sbt clean assembly
 
 #### Run:
-> <pre>
+> <pre> 
 > path/to/spark/bin/spark-submit \
->  --executor-memory Xg \
->  --driver-memory Xg
->  --total-executor-cores X \
->  --executor-cores X \
->  --deploy-mode cluster
->  --class path/to/&lt;application-jar&gt; \
->  &lt;hadoop-env&gt; e.g. develop beta production \
->  &lt;application-config-path&gt;
+>   --executor-memory Xg \
+>   --driver-memory Xg
+>   --total-executor-cores X \
+>   --executor-cores X \
+>   --deploy-mode cluster \
+>   --master &lt;master&gt; \
+>   --class com.madhouse.ssp.ReportRT; \
+>   hdfs://XX/path/to/&lt;application&gt;.jar \
+>   hdfs://XX/path/to/&lt;application&gt.conf
 > </pre>
 
 #### Config:
@@ -39,7 +40,7 @@
 >     pwd = "tomcat2008"
 > 
 >     dest_table_name = "mad_report_media_mem"
->     batch_size = 64
+>     batch_size = 16
 >   }
 > 
 >   log_type = "MEDIABID"  // eg. MEDIABID, DSPBID, IMPRESSION, CLICK, WINNOTICE
