@@ -14,7 +14,7 @@
 >   --master &lt;master&gt; \
 >   --class com.madhouse.ssp.ReportRT \
 >   hdfs://XX/path/to/&lt;application&gt;.jar \
->   hdfs://XX/path/to/&lt;application&gt.conf
+>   hdfs://XX/path/to/&lt;application&gt;.conf
 > </pre>
 
 #### Config:
