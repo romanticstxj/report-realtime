@@ -50,7 +50,7 @@ class Configure(file: String) extends Serializable {
     val url = conf.getString("url")
     val user = getOrElse("user", "root")(conf)
     val pwd = getOrElse("pwd", "123456")(conf)
-    val table = getOrElse("dest_table_name", "mad_report_media_rt_mem")(conf)
+    val table = conf.getString("dest_table_name")
     val size = getOrElse("batch_size", 64)
     JDBCConf(url, user, pwd, table, size)
   }
