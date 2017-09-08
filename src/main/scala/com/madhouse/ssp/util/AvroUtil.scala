@@ -10,7 +10,7 @@ import org.apache.avro.specific.{SpecificDatumReader, SpecificRecordBase}
   * Created by Sunxiang on 2017-07-28 09:50.
   *
   */
-object AvroUtil {
+object AvroUtil extends Serializable {
 
   private def recordDecode[T <: SpecificRecordBase](bytes: Array[Byte], schema: Schema): T = {
     val reader = new SpecificDatumReader[T](schema)

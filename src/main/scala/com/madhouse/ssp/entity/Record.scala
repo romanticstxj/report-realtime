@@ -25,7 +25,7 @@ case class ReportData(var reqs: Long, var bids: Long, var wins: Long, var timeou
 }
 
 
-object MediaBidRecord {
+case object MediaBidRecord {
   def apply(mediaId: Int, adSpaceId: Int, dayHour: String, count: (Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')
@@ -35,7 +35,7 @@ object MediaBidRecord {
   }
 }
 
-object DspBidRecord {
+case object DspBidRecord {
   def apply(policyId: Int, dspId: Int, dayHour: String, count: (Long, Long, Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')
@@ -45,7 +45,7 @@ object DspBidRecord {
   }
 }
 
-object ImpressionRecord {
+case object ImpressionRecord {
   def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, countAndMoney: (Long, Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')
@@ -56,7 +56,7 @@ object ImpressionRecord {
   }
 }
 
-object ClickRecord {
+case object ClickRecord {
   def apply(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, dayHour: String, countAndMoney: (Long, Long, Long, Long)) = {
     val (day, hour) = {
       val ps = dayHour.split('_')

@@ -18,9 +18,9 @@ object ReportRT {
     implicit val configure = new Configure(args(0))
     import configure._
 
+    val logType = configure.logType
 
     val spark = SparkSession.builder.appName(s"ReportRT-$logType").getOrCreate()
-    spark.sparkContext.setLogLevel("WARN")
 
     import spark.implicits._
 

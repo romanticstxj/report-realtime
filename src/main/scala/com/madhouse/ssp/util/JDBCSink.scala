@@ -1,6 +1,6 @@
 package com.madhouse.ssp.util
 
-import java.sql.{Connection, DriverManager, PreparedStatement, Statement}
+import java.sql.{Connection, DriverManager, Statement}
 
 import com.madhouse.ssp.logger
 import com.madhouse.ssp.entity.LogType._
