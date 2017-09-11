@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 732831907003398630L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MediaResponse\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"cid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"crid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"layout\",\"type\":\"int\",\"default\":0},{\"name\":\"icon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cover\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"desc\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"content\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"duration\",\"type\":\"int\",\"default\":0},{\"name\":\"adm\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lpgurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"acttype\",\"type\":\"int\",\"default\":1},{\"name\":\"monitor\",\"type\":{\"type\":\"record\",\"name\":\"Monitor\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}},\"default\":null},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"exptime\",\"type\":\"int\",\"default\":86400},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null}]}}]}");
+  private static final long serialVersionUID = 1234133921956140409L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MediaResponse\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"cid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"crid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"brand\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"layout\",\"type\":\"int\",\"default\":0},{\"name\":\"icon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"cover\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"title\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"desc\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"content\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"duration\",\"type\":\"int\",\"default\":0},{\"name\":\"adm\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"dealid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"lpgurl\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"acttype\",\"type\":\"int\",\"default\":1},{\"name\":\"monitor\",\"type\":{\"type\":\"record\",\"name\":\"Monitor\",\"fields\":[{\"name\":\"impurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Track\",\"fields\":[{\"name\":\"startdelay\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}},\"default\":null},{\"name\":\"clkurl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"securl\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null},{\"name\":\"exptime\",\"type\":\"int\",\"default\":86400},{\"name\":\"exts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"default\":null}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,6 +54,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
   @Deprecated public long dspid;
   @Deprecated public java.lang.String cid;
   @Deprecated public java.lang.String crid;
+  @Deprecated public java.lang.String brand;
   @Deprecated public int layout;
   @Deprecated public java.lang.String icon;
   @Deprecated public java.lang.String cover;
@@ -79,6 +80,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
    * @param dspid The new value for dspid
    * @param cid The new value for cid
    * @param crid The new value for crid
+   * @param brand The new value for brand
    * @param layout The new value for layout
    * @param icon The new value for icon
    * @param cover The new value for cover
@@ -92,10 +94,11 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
    * @param acttype The new value for acttype
    * @param monitor The new value for monitor
    */
-  public MediaResponse(java.lang.Long dspid, java.lang.String cid, java.lang.String crid, java.lang.Integer layout, java.lang.String icon, java.lang.String cover, java.lang.String title, java.lang.String desc, java.lang.String content, java.lang.Integer duration, java.util.List<java.lang.String> adm, java.lang.String dealid, java.lang.String lpgurl, java.lang.Integer acttype, com.madhouse.ssp.avro.Monitor monitor) {
+  public MediaResponse(java.lang.Long dspid, java.lang.String cid, java.lang.String crid, java.lang.String brand, java.lang.Integer layout, java.lang.String icon, java.lang.String cover, java.lang.String title, java.lang.String desc, java.lang.String content, java.lang.Integer duration, java.util.List<java.lang.String> adm, java.lang.String dealid, java.lang.String lpgurl, java.lang.Integer acttype, com.madhouse.ssp.avro.Monitor monitor) {
     this.dspid = dspid;
     this.cid = cid;
     this.crid = crid;
+    this.brand = brand;
     this.layout = layout;
     this.icon = icon;
     this.cover = cover;
@@ -117,18 +120,19 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
     case 0: return dspid;
     case 1: return cid;
     case 2: return crid;
-    case 3: return layout;
-    case 4: return icon;
-    case 5: return cover;
-    case 6: return title;
-    case 7: return desc;
-    case 8: return content;
-    case 9: return duration;
-    case 10: return adm;
-    case 11: return dealid;
-    case 12: return lpgurl;
-    case 13: return acttype;
-    case 14: return monitor;
+    case 3: return brand;
+    case 4: return layout;
+    case 5: return icon;
+    case 6: return cover;
+    case 7: return title;
+    case 8: return desc;
+    case 9: return content;
+    case 10: return duration;
+    case 11: return adm;
+    case 12: return dealid;
+    case 13: return lpgurl;
+    case 14: return acttype;
+    case 15: return monitor;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -140,18 +144,19 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
     case 0: dspid = (java.lang.Long)value$; break;
     case 1: cid = (java.lang.String)value$; break;
     case 2: crid = (java.lang.String)value$; break;
-    case 3: layout = (java.lang.Integer)value$; break;
-    case 4: icon = (java.lang.String)value$; break;
-    case 5: cover = (java.lang.String)value$; break;
-    case 6: title = (java.lang.String)value$; break;
-    case 7: desc = (java.lang.String)value$; break;
-    case 8: content = (java.lang.String)value$; break;
-    case 9: duration = (java.lang.Integer)value$; break;
-    case 10: adm = (java.util.List<java.lang.String>)value$; break;
-    case 11: dealid = (java.lang.String)value$; break;
-    case 12: lpgurl = (java.lang.String)value$; break;
-    case 13: acttype = (java.lang.Integer)value$; break;
-    case 14: monitor = (com.madhouse.ssp.avro.Monitor)value$; break;
+    case 3: brand = (java.lang.String)value$; break;
+    case 4: layout = (java.lang.Integer)value$; break;
+    case 5: icon = (java.lang.String)value$; break;
+    case 6: cover = (java.lang.String)value$; break;
+    case 7: title = (java.lang.String)value$; break;
+    case 8: desc = (java.lang.String)value$; break;
+    case 9: content = (java.lang.String)value$; break;
+    case 10: duration = (java.lang.Integer)value$; break;
+    case 11: adm = (java.util.List<java.lang.String>)value$; break;
+    case 12: dealid = (java.lang.String)value$; break;
+    case 13: lpgurl = (java.lang.String)value$; break;
+    case 14: acttype = (java.lang.Integer)value$; break;
+    case 15: monitor = (com.madhouse.ssp.avro.Monitor)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -202,6 +207,22 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
    */
   public void setCrid(java.lang.String value) {
     this.crid = value;
+  }
+
+  /**
+   * Gets the value of the 'brand' field.
+   * @return The value of the 'brand' field.
+   */
+  public java.lang.String getBrand() {
+    return brand;
+  }
+
+  /**
+   * Sets the value of the 'brand' field.
+   * @param value the value to set.
+   */
+  public void setBrand(java.lang.String value) {
+    this.brand = value;
   }
 
   /**
@@ -431,6 +452,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
     private long dspid;
     private java.lang.String cid;
     private java.lang.String crid;
+    private java.lang.String brand;
     private int layout;
     private java.lang.String icon;
     private java.lang.String cover;
@@ -468,53 +490,57 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
         this.crid = data().deepCopy(fields()[2].schema(), other.crid);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.layout)) {
-        this.layout = data().deepCopy(fields()[3].schema(), other.layout);
+      if (isValidValue(fields()[3], other.brand)) {
+        this.brand = data().deepCopy(fields()[3].schema(), other.brand);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.icon)) {
-        this.icon = data().deepCopy(fields()[4].schema(), other.icon);
+      if (isValidValue(fields()[4], other.layout)) {
+        this.layout = data().deepCopy(fields()[4].schema(), other.layout);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.cover)) {
-        this.cover = data().deepCopy(fields()[5].schema(), other.cover);
+      if (isValidValue(fields()[5], other.icon)) {
+        this.icon = data().deepCopy(fields()[5].schema(), other.icon);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.title)) {
-        this.title = data().deepCopy(fields()[6].schema(), other.title);
+      if (isValidValue(fields()[6], other.cover)) {
+        this.cover = data().deepCopy(fields()[6].schema(), other.cover);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.desc)) {
-        this.desc = data().deepCopy(fields()[7].schema(), other.desc);
+      if (isValidValue(fields()[7], other.title)) {
+        this.title = data().deepCopy(fields()[7].schema(), other.title);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.content)) {
-        this.content = data().deepCopy(fields()[8].schema(), other.content);
+      if (isValidValue(fields()[8], other.desc)) {
+        this.desc = data().deepCopy(fields()[8].schema(), other.desc);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.duration)) {
-        this.duration = data().deepCopy(fields()[9].schema(), other.duration);
+      if (isValidValue(fields()[9], other.content)) {
+        this.content = data().deepCopy(fields()[9].schema(), other.content);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.adm)) {
-        this.adm = data().deepCopy(fields()[10].schema(), other.adm);
+      if (isValidValue(fields()[10], other.duration)) {
+        this.duration = data().deepCopy(fields()[10].schema(), other.duration);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.dealid)) {
-        this.dealid = data().deepCopy(fields()[11].schema(), other.dealid);
+      if (isValidValue(fields()[11], other.adm)) {
+        this.adm = data().deepCopy(fields()[11].schema(), other.adm);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.lpgurl)) {
-        this.lpgurl = data().deepCopy(fields()[12].schema(), other.lpgurl);
+      if (isValidValue(fields()[12], other.dealid)) {
+        this.dealid = data().deepCopy(fields()[12].schema(), other.dealid);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.acttype)) {
-        this.acttype = data().deepCopy(fields()[13].schema(), other.acttype);
+      if (isValidValue(fields()[13], other.lpgurl)) {
+        this.lpgurl = data().deepCopy(fields()[13].schema(), other.lpgurl);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.monitor)) {
-        this.monitor = data().deepCopy(fields()[14].schema(), other.monitor);
+      if (isValidValue(fields()[14], other.acttype)) {
+        this.acttype = data().deepCopy(fields()[14].schema(), other.acttype);
         fieldSetFlags()[14] = true;
+      }
+      if (isValidValue(fields()[15], other.monitor)) {
+        this.monitor = data().deepCopy(fields()[15].schema(), other.monitor);
+        fieldSetFlags()[15] = true;
       }
       if (other.hasMonitorBuilder()) {
         this.monitorBuilder = com.madhouse.ssp.avro.Monitor.newBuilder(other.getMonitorBuilder());
@@ -539,53 +565,57 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
         this.crid = data().deepCopy(fields()[2].schema(), other.crid);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.layout)) {
-        this.layout = data().deepCopy(fields()[3].schema(), other.layout);
+      if (isValidValue(fields()[3], other.brand)) {
+        this.brand = data().deepCopy(fields()[3].schema(), other.brand);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.icon)) {
-        this.icon = data().deepCopy(fields()[4].schema(), other.icon);
+      if (isValidValue(fields()[4], other.layout)) {
+        this.layout = data().deepCopy(fields()[4].schema(), other.layout);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.cover)) {
-        this.cover = data().deepCopy(fields()[5].schema(), other.cover);
+      if (isValidValue(fields()[5], other.icon)) {
+        this.icon = data().deepCopy(fields()[5].schema(), other.icon);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.title)) {
-        this.title = data().deepCopy(fields()[6].schema(), other.title);
+      if (isValidValue(fields()[6], other.cover)) {
+        this.cover = data().deepCopy(fields()[6].schema(), other.cover);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.desc)) {
-        this.desc = data().deepCopy(fields()[7].schema(), other.desc);
+      if (isValidValue(fields()[7], other.title)) {
+        this.title = data().deepCopy(fields()[7].schema(), other.title);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.content)) {
-        this.content = data().deepCopy(fields()[8].schema(), other.content);
+      if (isValidValue(fields()[8], other.desc)) {
+        this.desc = data().deepCopy(fields()[8].schema(), other.desc);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.duration)) {
-        this.duration = data().deepCopy(fields()[9].schema(), other.duration);
+      if (isValidValue(fields()[9], other.content)) {
+        this.content = data().deepCopy(fields()[9].schema(), other.content);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.adm)) {
-        this.adm = data().deepCopy(fields()[10].schema(), other.adm);
+      if (isValidValue(fields()[10], other.duration)) {
+        this.duration = data().deepCopy(fields()[10].schema(), other.duration);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.dealid)) {
-        this.dealid = data().deepCopy(fields()[11].schema(), other.dealid);
+      if (isValidValue(fields()[11], other.adm)) {
+        this.adm = data().deepCopy(fields()[11].schema(), other.adm);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.lpgurl)) {
-        this.lpgurl = data().deepCopy(fields()[12].schema(), other.lpgurl);
+      if (isValidValue(fields()[12], other.dealid)) {
+        this.dealid = data().deepCopy(fields()[12].schema(), other.dealid);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.acttype)) {
-        this.acttype = data().deepCopy(fields()[13].schema(), other.acttype);
+      if (isValidValue(fields()[13], other.lpgurl)) {
+        this.lpgurl = data().deepCopy(fields()[13].schema(), other.lpgurl);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.monitor)) {
-        this.monitor = data().deepCopy(fields()[14].schema(), other.monitor);
+      if (isValidValue(fields()[14], other.acttype)) {
+        this.acttype = data().deepCopy(fields()[14].schema(), other.acttype);
         fieldSetFlags()[14] = true;
+      }
+      if (isValidValue(fields()[15], other.monitor)) {
+        this.monitor = data().deepCopy(fields()[15].schema(), other.monitor);
+        fieldSetFlags()[15] = true;
       }
       this.monitorBuilder = null;
     }
@@ -707,6 +737,45 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
     }
 
     /**
+      * Gets the value of the 'brand' field.
+      * @return The value.
+      */
+    public java.lang.String getBrand() {
+      return brand;
+    }
+
+    /**
+      * Sets the value of the 'brand' field.
+      * @param value The value of 'brand'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.MediaResponse.Builder setBrand(java.lang.String value) {
+      validate(fields()[3], value);
+      this.brand = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'brand' field has been set.
+      * @return True if the 'brand' field has been set, false otherwise.
+      */
+    public boolean hasBrand() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'brand' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.MediaResponse.Builder clearBrand() {
+      brand = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'layout' field.
       * @return The value.
       */
@@ -720,9 +789,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setLayout(int value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.layout = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -731,7 +800,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'layout' field has been set, false otherwise.
       */
     public boolean hasLayout() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -740,7 +809,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearLayout() {
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -758,9 +827,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setIcon(java.lang.String value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.icon = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -769,7 +838,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'icon' field has been set, false otherwise.
       */
     public boolean hasIcon() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -779,7 +848,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearIcon() {
       icon = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -797,9 +866,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setCover(java.lang.String value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.cover = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -808,7 +877,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'cover' field has been set, false otherwise.
       */
     public boolean hasCover() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -818,7 +887,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearCover() {
       cover = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -836,9 +905,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setTitle(java.lang.String value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.title = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -847,7 +916,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'title' field has been set, false otherwise.
       */
     public boolean hasTitle() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -857,7 +926,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearTitle() {
       title = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -875,9 +944,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setDesc(java.lang.String value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.desc = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -886,7 +955,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'desc' field has been set, false otherwise.
       */
     public boolean hasDesc() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -896,7 +965,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearDesc() {
       desc = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -914,9 +983,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setContent(java.lang.String value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.content = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -925,7 +994,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'content' field has been set, false otherwise.
       */
     public boolean hasContent() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -935,7 +1004,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearContent() {
       content = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -953,9 +1022,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setDuration(int value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.duration = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -964,7 +1033,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'duration' field has been set, false otherwise.
       */
     public boolean hasDuration() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -973,7 +1042,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearDuration() {
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -991,9 +1060,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setAdm(java.util.List<java.lang.String> value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.adm = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -1002,7 +1071,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'adm' field has been set, false otherwise.
       */
     public boolean hasAdm() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1012,7 +1081,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearAdm() {
       adm = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1030,9 +1099,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setDealid(java.lang.String value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.dealid = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1041,7 +1110,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'dealid' field has been set, false otherwise.
       */
     public boolean hasDealid() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1051,7 +1120,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearDealid() {
       dealid = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1069,9 +1138,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setLpgurl(java.lang.String value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.lpgurl = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1080,7 +1149,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'lpgurl' field has been set, false otherwise.
       */
     public boolean hasLpgurl() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1090,7 +1159,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearLpgurl() {
       lpgurl = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1108,9 +1177,9 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setActtype(int value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.acttype = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this;
     }
 
@@ -1119,7 +1188,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'acttype' field has been set, false otherwise.
       */
     public boolean hasActtype() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1128,7 +1197,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder clearActtype() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1146,10 +1215,10 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.madhouse.ssp.avro.MediaResponse.Builder setMonitor(com.madhouse.ssp.avro.Monitor value) {
-      validate(fields()[14], value);
+      validate(fields()[15], value);
       this.monitorBuilder = null;
       this.monitor = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this;
     }
 
@@ -1158,7 +1227,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
       * @return True if the 'monitor' field has been set, false otherwise.
       */
     public boolean hasMonitor() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
 
     /**
@@ -1202,7 +1271,7 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
     public com.madhouse.ssp.avro.MediaResponse.Builder clearMonitor() {
       monitor = null;
       monitorBuilder = null;
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
 
@@ -1214,21 +1283,22 @@ public class MediaResponse extends org.apache.avro.specific.SpecificRecordBase i
         record.dspid = fieldSetFlags()[0] ? this.dspid : (java.lang.Long) defaultValue(fields()[0]);
         record.cid = fieldSetFlags()[1] ? this.cid : (java.lang.String) defaultValue(fields()[1]);
         record.crid = fieldSetFlags()[2] ? this.crid : (java.lang.String) defaultValue(fields()[2]);
-        record.layout = fieldSetFlags()[3] ? this.layout : (java.lang.Integer) defaultValue(fields()[3]);
-        record.icon = fieldSetFlags()[4] ? this.icon : (java.lang.String) defaultValue(fields()[4]);
-        record.cover = fieldSetFlags()[5] ? this.cover : (java.lang.String) defaultValue(fields()[5]);
-        record.title = fieldSetFlags()[6] ? this.title : (java.lang.String) defaultValue(fields()[6]);
-        record.desc = fieldSetFlags()[7] ? this.desc : (java.lang.String) defaultValue(fields()[7]);
-        record.content = fieldSetFlags()[8] ? this.content : (java.lang.String) defaultValue(fields()[8]);
-        record.duration = fieldSetFlags()[9] ? this.duration : (java.lang.Integer) defaultValue(fields()[9]);
-        record.adm = fieldSetFlags()[10] ? this.adm : (java.util.List<java.lang.String>) defaultValue(fields()[10]);
-        record.dealid = fieldSetFlags()[11] ? this.dealid : (java.lang.String) defaultValue(fields()[11]);
-        record.lpgurl = fieldSetFlags()[12] ? this.lpgurl : (java.lang.String) defaultValue(fields()[12]);
-        record.acttype = fieldSetFlags()[13] ? this.acttype : (java.lang.Integer) defaultValue(fields()[13]);
+        record.brand = fieldSetFlags()[3] ? this.brand : (java.lang.String) defaultValue(fields()[3]);
+        record.layout = fieldSetFlags()[4] ? this.layout : (java.lang.Integer) defaultValue(fields()[4]);
+        record.icon = fieldSetFlags()[5] ? this.icon : (java.lang.String) defaultValue(fields()[5]);
+        record.cover = fieldSetFlags()[6] ? this.cover : (java.lang.String) defaultValue(fields()[6]);
+        record.title = fieldSetFlags()[7] ? this.title : (java.lang.String) defaultValue(fields()[7]);
+        record.desc = fieldSetFlags()[8] ? this.desc : (java.lang.String) defaultValue(fields()[8]);
+        record.content = fieldSetFlags()[9] ? this.content : (java.lang.String) defaultValue(fields()[9]);
+        record.duration = fieldSetFlags()[10] ? this.duration : (java.lang.Integer) defaultValue(fields()[10]);
+        record.adm = fieldSetFlags()[11] ? this.adm : (java.util.List<java.lang.String>) defaultValue(fields()[11]);
+        record.dealid = fieldSetFlags()[12] ? this.dealid : (java.lang.String) defaultValue(fields()[12]);
+        record.lpgurl = fieldSetFlags()[13] ? this.lpgurl : (java.lang.String) defaultValue(fields()[13]);
+        record.acttype = fieldSetFlags()[14] ? this.acttype : (java.lang.Integer) defaultValue(fields()[14]);
         if (monitorBuilder != null) {
           record.monitor = this.monitorBuilder.build();
         } else {
-          record.monitor = fieldSetFlags()[14] ? this.monitor : (com.madhouse.ssp.avro.Monitor) defaultValue(fields()[14]);
+          record.monitor = fieldSetFlags()[15] ? this.monitor : (com.madhouse.ssp.avro.Monitor) defaultValue(fields()[15]);
         }
         return record;
       } catch (java.lang.Exception e) {
