@@ -38,38 +38,40 @@ class JDBCSink(schema: StructType, logType: LogType, conf: JDBCConf) extends For
     connection.close()
   }
 
+  def getReportData(key: String) = {
+    val data = reportData.get(key)
+    if (data.isDefined) data.get else ReportData()
+  }
+
   def processData(r: Row) = {
-    logType match {
+    reportData += (logType match {
       case MEDIABID =>
         val key = s"""${r.getInt(0)}, ${r.getInt(1)}, '${r.getString(2)}', ${r.getInt(3)}"""
-        if (reportData.contains(key)) {
-          val data = reportData.get(key).get
-          data.reqs += r.getLong(4)
-          data.bids += r.getLong(5)
-          data.errs += r.getLong(6)
-        } else reportData += (key -> ReportData(r.getLong(4), r.getLong(5), 0L, 0L, r.getLong(6), 0L, 0L, 0L, 0L, 0L, 0L))
+        val data = getReportData(key)
+        data.reqs += r.getLong(4)
+        data.bids += r.getLong(5)
+        data.errs += r.getLong(6)
+        (key -> data)
       case DSPBID =>
         val key = s"""${r.getInt(0)}, ${r.getInt(1)}, '${r.getString(2)}', ${r.getInt(3)}"""
-        if (reportData.contains(key)) {
-          val data = reportData.get(key).get
-          data.reqs += r.getLong(4)
-          data.bids += r.getLong(5)
-          data.wins +=  r.getLong(6)
-          data.timeouts += r.getLong(7)
-          data.errs +=  r.getLong(8)
-        } else reportData += (key -> ReportData(r.getLong(4), r.getLong(5), r.getLong(6), r.getLong(7), r.getLong(8), 0L, 0L, 0L, 0L, 0L, 0L))
+        val data = getReportData(key)
+        data.reqs += r.getLong(4)
+        data.bids += r.getLong(5)
+        data.wins +=  r.getLong(6)
+        data.timeouts += r.getLong(7)
+        data.errs +=  r.getLong(8)
+        (key -> data)
       case IMPRESSION | CLICK =>
         val key = s"""${r.getInt(0)}, ${r.getInt(1)}, ${r.getInt(2)}, ${r.getInt(3)}, '${r.getString(4)}', ${r.getInt(5)}"""
-        if (reportData.contains(key)) {
-          val data = reportData.get(key).get
-          data.imps += r.getLong(6)
-          data.clks += r.getLong(7)
-          data.vimps += r.getLong(8)
-          data.vclks += r.getLong(9)
-          data.income +=  r.getLong(10)
-          data.cost += r.getLong(11)
-        } else reportData += (key -> ReportData(0L, 0L, 0L, 0L, 0L, r.getLong(6), r.getLong(7), r.getLong(8), r.getLong(9), r.getLong(10), r.getLong(11)))
-    }
+        val data = getReportData(key)
+        data.imps += r.getLong(6)
+        data.clks += r.getLong(7)
+        data.vimps += r.getLong(8)
+        data.vclks += r.getLong(9)
+        data.income +=  r.getLong(10)
+        data.cost += r.getLong(11)
+        (key -> data)
+    })
 
     if (reportData.size % conf.batchSize == 0) saveData()
   }

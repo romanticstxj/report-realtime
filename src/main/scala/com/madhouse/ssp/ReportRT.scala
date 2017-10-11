@@ -20,7 +20,7 @@ object ReportRT {
 
     val logType = configure.logType
 
-    val spark = SparkSession.builder.appName(s"ReportRT-$logType").getOrCreate()
+    val spark = SparkSession.builder.appName(s"ReportRT-$logType").master("local[2]").getOrCreate()
 
     import spark.implicits._
 

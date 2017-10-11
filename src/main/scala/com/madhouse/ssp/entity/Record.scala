@@ -15,7 +15,7 @@ case class DspBidRecord(policyId: Int, dspId: Int, date: String, hour: Int, reqs
 
 case class TrackerRecord(mediaId: Int, adSpaceId: Int, policyId: Int, dspId: Int, date: String, hour: Int, imps: Long, clks: Long, vimps: Long, vclks: Long, income: Long, cost: Long) extends Record
 
-case class ReportData(var reqs: Long, var bids: Long, var wins: Long, var timeouts: Long, var errs: Long, var imps: Long, var clks: Long, var vimps: Long, var vclks: Long, var income: Long, var cost: Long) {
+case class ReportData(var reqs: Long = 0L, var bids: Long = 0L, var wins: Long = 0L, var timeouts: Long = 0L, var errs: Long = 0L, var imps: Long = 0L, var clks: Long = 0L, var vimps: Long = 0L, var vclks: Long = 0L, var income: Long = 0L, var cost: Long = 0L) {
 
   def toSeq(logType: LogType) = logType match {
     case MEDIABID => Seq(reqs, bids, errs)
