@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7444272360377542983L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ClickTrack\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"bidtime\",\"type\":\"long\",\"default\":0},{\"name\":\"invalid\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ext\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"income\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":\"int\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -3265669291855791483L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ClickTrack\",\"namespace\":\"com.madhouse.ssp.avro\",\"fields\":[{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"ua\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ip\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"bid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"impid\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"mediaid\",\"type\":\"long\"},{\"name\":\"adspaceid\",\"type\":\"long\"},{\"name\":\"policyid\",\"type\":\"long\"},{\"name\":\"bidtime\",\"type\":\"long\",\"default\":0},{\"name\":\"invalid\",\"type\":\"int\",\"default\":0},{\"name\":\"url\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ext\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"dspid\",\"type\":\"long\"},{\"name\":\"income\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":\"int\"},{\"name\":\"location\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -55,6 +55,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
   @Deprecated public java.lang.String ua;
   @Deprecated public java.lang.String ip;
   @Deprecated public int status;
+  @Deprecated public java.lang.String bid;
   @Deprecated public java.lang.String impid;
   @Deprecated public long mediaid;
   @Deprecated public long adspaceid;
@@ -81,6 +82,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
    * @param ua The new value for ua
    * @param ip The new value for ip
    * @param status The new value for status
+   * @param bid The new value for bid
    * @param impid The new value for impid
    * @param mediaid The new value for mediaid
    * @param adspaceid The new value for adspaceid
@@ -94,11 +96,12 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
    * @param cost The new value for cost
    * @param location The new value for location
    */
-  public ClickTrack(java.lang.Long time, java.lang.String ua, java.lang.String ip, java.lang.Integer status, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Long policyid, java.lang.Long bidtime, java.lang.Integer invalid, java.lang.String url, java.lang.String ext, java.lang.Long dspid, java.lang.Integer income, java.lang.Integer cost, java.lang.String location) {
+  public ClickTrack(java.lang.Long time, java.lang.String ua, java.lang.String ip, java.lang.Integer status, java.lang.String bid, java.lang.String impid, java.lang.Long mediaid, java.lang.Long adspaceid, java.lang.Long policyid, java.lang.Long bidtime, java.lang.Integer invalid, java.lang.String url, java.lang.String ext, java.lang.Long dspid, java.lang.Integer income, java.lang.Integer cost, java.lang.String location) {
     this.time = time;
     this.ua = ua;
     this.ip = ip;
     this.status = status;
+    this.bid = bid;
     this.impid = impid;
     this.mediaid = mediaid;
     this.adspaceid = adspaceid;
@@ -121,18 +124,19 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
     case 1: return ua;
     case 2: return ip;
     case 3: return status;
-    case 4: return impid;
-    case 5: return mediaid;
-    case 6: return adspaceid;
-    case 7: return policyid;
-    case 8: return bidtime;
-    case 9: return invalid;
-    case 10: return url;
-    case 11: return ext;
-    case 12: return dspid;
-    case 13: return income;
-    case 14: return cost;
-    case 15: return location;
+    case 4: return bid;
+    case 5: return impid;
+    case 6: return mediaid;
+    case 7: return adspaceid;
+    case 8: return policyid;
+    case 9: return bidtime;
+    case 10: return invalid;
+    case 11: return url;
+    case 12: return ext;
+    case 13: return dspid;
+    case 14: return income;
+    case 15: return cost;
+    case 16: return location;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -145,18 +149,19 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
     case 1: ua = (java.lang.String)value$; break;
     case 2: ip = (java.lang.String)value$; break;
     case 3: status = (java.lang.Integer)value$; break;
-    case 4: impid = (java.lang.String)value$; break;
-    case 5: mediaid = (java.lang.Long)value$; break;
-    case 6: adspaceid = (java.lang.Long)value$; break;
-    case 7: policyid = (java.lang.Long)value$; break;
-    case 8: bidtime = (java.lang.Long)value$; break;
-    case 9: invalid = (java.lang.Integer)value$; break;
-    case 10: url = (java.lang.String)value$; break;
-    case 11: ext = (java.lang.String)value$; break;
-    case 12: dspid = (java.lang.Long)value$; break;
-    case 13: income = (java.lang.Integer)value$; break;
-    case 14: cost = (java.lang.Integer)value$; break;
-    case 15: location = (java.lang.String)value$; break;
+    case 4: bid = (java.lang.String)value$; break;
+    case 5: impid = (java.lang.String)value$; break;
+    case 6: mediaid = (java.lang.Long)value$; break;
+    case 7: adspaceid = (java.lang.Long)value$; break;
+    case 8: policyid = (java.lang.Long)value$; break;
+    case 9: bidtime = (java.lang.Long)value$; break;
+    case 10: invalid = (java.lang.Integer)value$; break;
+    case 11: url = (java.lang.String)value$; break;
+    case 12: ext = (java.lang.String)value$; break;
+    case 13: dspid = (java.lang.Long)value$; break;
+    case 14: income = (java.lang.Integer)value$; break;
+    case 15: cost = (java.lang.Integer)value$; break;
+    case 16: location = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -223,6 +228,22 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
    */
   public void setStatus(java.lang.Integer value) {
     this.status = value;
+  }
+
+  /**
+   * Gets the value of the 'bid' field.
+   * @return The value of the 'bid' field.
+   */
+  public java.lang.String getBid() {
+    return bid;
+  }
+
+  /**
+   * Sets the value of the 'bid' field.
+   * @param value the value to set.
+   */
+  public void setBid(java.lang.String value) {
+    this.bid = value;
   }
 
   /**
@@ -453,6 +474,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
     private java.lang.String ua;
     private java.lang.String ip;
     private int status;
+    private java.lang.String bid;
     private java.lang.String impid;
     private long mediaid;
     private long adspaceid;
@@ -493,53 +515,57 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
         this.status = data().deepCopy(fields()[3].schema(), other.status);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.impid)) {
-        this.impid = data().deepCopy(fields()[4].schema(), other.impid);
+      if (isValidValue(fields()[4], other.bid)) {
+        this.bid = data().deepCopy(fields()[4].schema(), other.bid);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.mediaid)) {
-        this.mediaid = data().deepCopy(fields()[5].schema(), other.mediaid);
+      if (isValidValue(fields()[5], other.impid)) {
+        this.impid = data().deepCopy(fields()[5].schema(), other.impid);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.adspaceid)) {
-        this.adspaceid = data().deepCopy(fields()[6].schema(), other.adspaceid);
+      if (isValidValue(fields()[6], other.mediaid)) {
+        this.mediaid = data().deepCopy(fields()[6].schema(), other.mediaid);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.policyid)) {
-        this.policyid = data().deepCopy(fields()[7].schema(), other.policyid);
+      if (isValidValue(fields()[7], other.adspaceid)) {
+        this.adspaceid = data().deepCopy(fields()[7].schema(), other.adspaceid);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.bidtime)) {
-        this.bidtime = data().deepCopy(fields()[8].schema(), other.bidtime);
+      if (isValidValue(fields()[8], other.policyid)) {
+        this.policyid = data().deepCopy(fields()[8].schema(), other.policyid);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.invalid)) {
-        this.invalid = data().deepCopy(fields()[9].schema(), other.invalid);
+      if (isValidValue(fields()[9], other.bidtime)) {
+        this.bidtime = data().deepCopy(fields()[9].schema(), other.bidtime);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.url)) {
-        this.url = data().deepCopy(fields()[10].schema(), other.url);
+      if (isValidValue(fields()[10], other.invalid)) {
+        this.invalid = data().deepCopy(fields()[10].schema(), other.invalid);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.ext)) {
-        this.ext = data().deepCopy(fields()[11].schema(), other.ext);
+      if (isValidValue(fields()[11], other.url)) {
+        this.url = data().deepCopy(fields()[11].schema(), other.url);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.dspid)) {
-        this.dspid = data().deepCopy(fields()[12].schema(), other.dspid);
+      if (isValidValue(fields()[12], other.ext)) {
+        this.ext = data().deepCopy(fields()[12].schema(), other.ext);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.income)) {
-        this.income = data().deepCopy(fields()[13].schema(), other.income);
+      if (isValidValue(fields()[13], other.dspid)) {
+        this.dspid = data().deepCopy(fields()[13].schema(), other.dspid);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.cost)) {
-        this.cost = data().deepCopy(fields()[14].schema(), other.cost);
+      if (isValidValue(fields()[14], other.income)) {
+        this.income = data().deepCopy(fields()[14].schema(), other.income);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.location)) {
-        this.location = data().deepCopy(fields()[15].schema(), other.location);
+      if (isValidValue(fields()[15], other.cost)) {
+        this.cost = data().deepCopy(fields()[15].schema(), other.cost);
         fieldSetFlags()[15] = true;
+      }
+      if (isValidValue(fields()[16], other.location)) {
+        this.location = data().deepCopy(fields()[16].schema(), other.location);
+        fieldSetFlags()[16] = true;
       }
     }
 
@@ -565,53 +591,57 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
         this.status = data().deepCopy(fields()[3].schema(), other.status);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.impid)) {
-        this.impid = data().deepCopy(fields()[4].schema(), other.impid);
+      if (isValidValue(fields()[4], other.bid)) {
+        this.bid = data().deepCopy(fields()[4].schema(), other.bid);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.mediaid)) {
-        this.mediaid = data().deepCopy(fields()[5].schema(), other.mediaid);
+      if (isValidValue(fields()[5], other.impid)) {
+        this.impid = data().deepCopy(fields()[5].schema(), other.impid);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.adspaceid)) {
-        this.adspaceid = data().deepCopy(fields()[6].schema(), other.adspaceid);
+      if (isValidValue(fields()[6], other.mediaid)) {
+        this.mediaid = data().deepCopy(fields()[6].schema(), other.mediaid);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.policyid)) {
-        this.policyid = data().deepCopy(fields()[7].schema(), other.policyid);
+      if (isValidValue(fields()[7], other.adspaceid)) {
+        this.adspaceid = data().deepCopy(fields()[7].schema(), other.adspaceid);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.bidtime)) {
-        this.bidtime = data().deepCopy(fields()[8].schema(), other.bidtime);
+      if (isValidValue(fields()[8], other.policyid)) {
+        this.policyid = data().deepCopy(fields()[8].schema(), other.policyid);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.invalid)) {
-        this.invalid = data().deepCopy(fields()[9].schema(), other.invalid);
+      if (isValidValue(fields()[9], other.bidtime)) {
+        this.bidtime = data().deepCopy(fields()[9].schema(), other.bidtime);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.url)) {
-        this.url = data().deepCopy(fields()[10].schema(), other.url);
+      if (isValidValue(fields()[10], other.invalid)) {
+        this.invalid = data().deepCopy(fields()[10].schema(), other.invalid);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.ext)) {
-        this.ext = data().deepCopy(fields()[11].schema(), other.ext);
+      if (isValidValue(fields()[11], other.url)) {
+        this.url = data().deepCopy(fields()[11].schema(), other.url);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.dspid)) {
-        this.dspid = data().deepCopy(fields()[12].schema(), other.dspid);
+      if (isValidValue(fields()[12], other.ext)) {
+        this.ext = data().deepCopy(fields()[12].schema(), other.ext);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.income)) {
-        this.income = data().deepCopy(fields()[13].schema(), other.income);
+      if (isValidValue(fields()[13], other.dspid)) {
+        this.dspid = data().deepCopy(fields()[13].schema(), other.dspid);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.cost)) {
-        this.cost = data().deepCopy(fields()[14].schema(), other.cost);
+      if (isValidValue(fields()[14], other.income)) {
+        this.income = data().deepCopy(fields()[14].schema(), other.income);
         fieldSetFlags()[14] = true;
       }
-      if (isValidValue(fields()[15], other.location)) {
-        this.location = data().deepCopy(fields()[15].schema(), other.location);
+      if (isValidValue(fields()[15], other.cost)) {
+        this.cost = data().deepCopy(fields()[15].schema(), other.cost);
         fieldSetFlags()[15] = true;
+      }
+      if (isValidValue(fields()[16], other.location)) {
+        this.location = data().deepCopy(fields()[16].schema(), other.location);
+        fieldSetFlags()[16] = true;
       }
     }
 
@@ -770,6 +800,45 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
     }
 
     /**
+      * Gets the value of the 'bid' field.
+      * @return The value.
+      */
+    public java.lang.String getBid() {
+      return bid;
+    }
+
+    /**
+      * Sets the value of the 'bid' field.
+      * @param value The value of 'bid'.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.ClickTrack.Builder setBid(java.lang.String value) {
+      validate(fields()[4], value);
+      this.bid = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'bid' field has been set.
+      * @return True if the 'bid' field has been set, false otherwise.
+      */
+    public boolean hasBid() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'bid' field.
+      * @return This builder.
+      */
+    public com.madhouse.ssp.avro.ClickTrack.Builder clearBid() {
+      bid = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'impid' field.
       * @return The value.
       */
@@ -783,9 +852,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setImpid(java.lang.String value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.impid = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -794,7 +863,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'impid' field has been set, false otherwise.
       */
     public boolean hasImpid() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -804,7 +873,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearImpid() {
       impid = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -822,9 +891,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setMediaid(long value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.mediaid = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -833,7 +902,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'mediaid' field has been set, false otherwise.
       */
     public boolean hasMediaid() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -842,7 +911,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearMediaid() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -860,9 +929,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setAdspaceid(long value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.adspaceid = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -871,7 +940,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'adspaceid' field has been set, false otherwise.
       */
     public boolean hasAdspaceid() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -880,7 +949,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearAdspaceid() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -898,9 +967,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setPolicyid(long value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.policyid = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -909,7 +978,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'policyid' field has been set, false otherwise.
       */
     public boolean hasPolicyid() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -918,7 +987,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearPolicyid() {
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -936,9 +1005,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setBidtime(long value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.bidtime = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -947,7 +1016,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'bidtime' field has been set, false otherwise.
       */
     public boolean hasBidtime() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -956,7 +1025,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearBidtime() {
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -974,9 +1043,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setInvalid(int value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.invalid = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -985,7 +1054,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'invalid' field has been set, false otherwise.
       */
     public boolean hasInvalid() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -994,7 +1063,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearInvalid() {
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -1012,9 +1081,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setUrl(java.lang.String value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.url = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -1023,7 +1092,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'url' field has been set, false otherwise.
       */
     public boolean hasUrl() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1033,7 +1102,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearUrl() {
       url = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1051,9 +1120,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setExt(java.lang.String value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.ext = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1062,7 +1131,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'ext' field has been set, false otherwise.
       */
     public boolean hasExt() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1072,7 +1141,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearExt() {
       ext = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1090,9 +1159,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setDspid(long value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.dspid = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1101,7 +1170,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'dspid' field has been set, false otherwise.
       */
     public boolean hasDspid() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1110,7 +1179,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearDspid() {
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1128,9 +1197,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setIncome(int value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.income = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this;
     }
 
@@ -1139,7 +1208,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'income' field has been set, false otherwise.
       */
     public boolean hasIncome() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1148,7 +1217,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearIncome() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1166,9 +1235,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setCost(int value) {
-      validate(fields()[14], value);
+      validate(fields()[15], value);
       this.cost = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[15] = true;
       return this;
     }
 
@@ -1177,7 +1246,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'cost' field has been set, false otherwise.
       */
     public boolean hasCost() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[15];
     }
 
 
@@ -1186,7 +1255,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearCost() {
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[15] = false;
       return this;
     }
 
@@ -1204,9 +1273,9 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder setLocation(java.lang.String value) {
-      validate(fields()[15], value);
+      validate(fields()[16], value);
       this.location = value;
-      fieldSetFlags()[15] = true;
+      fieldSetFlags()[16] = true;
       return this;
     }
 
@@ -1215,7 +1284,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       * @return True if the 'location' field has been set, false otherwise.
       */
     public boolean hasLocation() {
-      return fieldSetFlags()[15];
+      return fieldSetFlags()[16];
     }
 
 
@@ -1225,7 +1294,7 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
       */
     public com.madhouse.ssp.avro.ClickTrack.Builder clearLocation() {
       location = null;
-      fieldSetFlags()[15] = false;
+      fieldSetFlags()[16] = false;
       return this;
     }
 
@@ -1238,18 +1307,19 @@ public class ClickTrack extends org.apache.avro.specific.SpecificRecordBase impl
         record.ua = fieldSetFlags()[1] ? this.ua : (java.lang.String) defaultValue(fields()[1]);
         record.ip = fieldSetFlags()[2] ? this.ip : (java.lang.String) defaultValue(fields()[2]);
         record.status = fieldSetFlags()[3] ? this.status : (java.lang.Integer) defaultValue(fields()[3]);
-        record.impid = fieldSetFlags()[4] ? this.impid : (java.lang.String) defaultValue(fields()[4]);
-        record.mediaid = fieldSetFlags()[5] ? this.mediaid : (java.lang.Long) defaultValue(fields()[5]);
-        record.adspaceid = fieldSetFlags()[6] ? this.adspaceid : (java.lang.Long) defaultValue(fields()[6]);
-        record.policyid = fieldSetFlags()[7] ? this.policyid : (java.lang.Long) defaultValue(fields()[7]);
-        record.bidtime = fieldSetFlags()[8] ? this.bidtime : (java.lang.Long) defaultValue(fields()[8]);
-        record.invalid = fieldSetFlags()[9] ? this.invalid : (java.lang.Integer) defaultValue(fields()[9]);
-        record.url = fieldSetFlags()[10] ? this.url : (java.lang.String) defaultValue(fields()[10]);
-        record.ext = fieldSetFlags()[11] ? this.ext : (java.lang.String) defaultValue(fields()[11]);
-        record.dspid = fieldSetFlags()[12] ? this.dspid : (java.lang.Long) defaultValue(fields()[12]);
-        record.income = fieldSetFlags()[13] ? this.income : (java.lang.Integer) defaultValue(fields()[13]);
-        record.cost = fieldSetFlags()[14] ? this.cost : (java.lang.Integer) defaultValue(fields()[14]);
-        record.location = fieldSetFlags()[15] ? this.location : (java.lang.String) defaultValue(fields()[15]);
+        record.bid = fieldSetFlags()[4] ? this.bid : (java.lang.String) defaultValue(fields()[4]);
+        record.impid = fieldSetFlags()[5] ? this.impid : (java.lang.String) defaultValue(fields()[5]);
+        record.mediaid = fieldSetFlags()[6] ? this.mediaid : (java.lang.Long) defaultValue(fields()[6]);
+        record.adspaceid = fieldSetFlags()[7] ? this.adspaceid : (java.lang.Long) defaultValue(fields()[7]);
+        record.policyid = fieldSetFlags()[8] ? this.policyid : (java.lang.Long) defaultValue(fields()[8]);
+        record.bidtime = fieldSetFlags()[9] ? this.bidtime : (java.lang.Long) defaultValue(fields()[9]);
+        record.invalid = fieldSetFlags()[10] ? this.invalid : (java.lang.Integer) defaultValue(fields()[10]);
+        record.url = fieldSetFlags()[11] ? this.url : (java.lang.String) defaultValue(fields()[11]);
+        record.ext = fieldSetFlags()[12] ? this.ext : (java.lang.String) defaultValue(fields()[12]);
+        record.dspid = fieldSetFlags()[13] ? this.dspid : (java.lang.Long) defaultValue(fields()[13]);
+        record.income = fieldSetFlags()[14] ? this.income : (java.lang.Integer) defaultValue(fields()[14]);
+        record.cost = fieldSetFlags()[15] ? this.cost : (java.lang.Integer) defaultValue(fields()[15]);
+        record.location = fieldSetFlags()[16] ? this.location : (java.lang.String) defaultValue(fields()[16]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
