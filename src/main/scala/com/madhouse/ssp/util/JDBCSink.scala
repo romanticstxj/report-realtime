@@ -72,23 +72,30 @@ class JDBCSink(schema: StructType, logType: LogType, conf: JDBCConf) extends For
         data.cost += r.getLong(11)
         (key -> data)
     })
-
-    if (reportData.size % conf.batchSize == 0) saveData()
   }
 
   def saveData() = {
-    val fields = schema.fields map { _.name }
+    var data: Map[String, ReportData] = Map[String, ReportData]()
 
-    val values = reportData map { case (k, v) =>
+    reportData foreach { case d =>
+      data += d
+      if (data.size >= conf.batchSize) {
+        saveRecord(data)
+        data.clear()
+      }
+    }
+
+    saveRecord(data)
+  }
+
+  def saveRecord(data: Map[String, ReportData]): Unit = if (data.nonEmpty) {
+    val fields = schema.fields map { _.name }
+    val values = data map { case (k, v) =>
       s"($k, ${v.toSeq(logType).mkString(", ")})"
     }
 
-    if (values.nonEmpty) {
-      val sql = s"""INSERT INTO `${conf.table}` (${fields.mkString("`", "`, `", "`")}) VALUES ${values.mkString(", ")}"""
-      logger(sql)
-      statement.execute(sql)
-    }
-
-    reportData.clear()
+    val sql = s"""INSERT INTO `${conf.table}` (${fields.mkString("`", "`, `", "`")}) VALUES ${values.mkString(", ")}"""
+    logger(sql)
+    statement.execute(sql)
   }
 }
