@@ -19,13 +19,14 @@ class JDBCSink(schema: StructType, logType: LogType, conf: JDBCConf) extends For
 
   var connection: Connection = _
   var statement: Statement = _
-  var reportData: Map[String, ReportData] = _
+
+  var reportData: Map[String, ReportData] = Map[String, ReportData]()
+  val fields = schema.fields map { _.name } mkString("`", "`, `", "`")
 
   override def open(partitionId: Long, version: Long): Boolean = {
     Class.forName(driver)
     connection = DriverManager.getConnection(conf.url, conf.user, conf.pwd)
     statement = connection.createStatement()
-    reportData = Map[String, ReportData]()
     true
   }
 
@@ -74,27 +75,12 @@ class JDBCSink(schema: StructType, logType: LogType, conf: JDBCConf) extends For
     })
   }
 
-  def saveData() = {
-    var data: Map[String, ReportData] = Map[String, ReportData]()
-
-    reportData foreach { case d =>
-      data += d
-      if (data.size >= conf.batchSize) {
-        saveRecord(data)
-        data.clear()
-      }
-    }
-
-    saveRecord(data)
-  }
-
-  def saveRecord(data: Map[String, ReportData]): Unit = if (data.nonEmpty) {
-    val fields = schema.fields map { _.name }
+  def saveData() = reportData.grouped(conf.batchSize) foreach { data =>
     val values = data map { case (k, v) =>
       s"($k, ${v.toSeq(logType).mkString(", ")})"
     }
 
-    val sql = s"""INSERT INTO `${conf.table}` (${fields.mkString("`", "`, `", "`")}) VALUES ${values.mkString(", ")}"""
+    val sql = s"""INSERT INTO `${conf.table}` ($fields) VALUES ${values.mkString(", ")}"""
     logger(sql)
     statement.execute(sql)
   }

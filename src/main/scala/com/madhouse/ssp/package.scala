@@ -10,7 +10,7 @@ import java.time.{Instant, LocalDateTime, ZoneId}
 package object ssp {
   val zone = ZoneId.of("Asia/Shanghai")
 
-  val logger: String => Unit = { msg =>
+  def logger: String => Unit = { msg =>
     val time = LocalDateTime.ofInstant(Instant.now(), zone).format(ofPattern("yyyy-MM-dd HH:mm:ss"))
     println(s"[$time] $msg")
   }
